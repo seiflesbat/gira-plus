@@ -1,0 +1,26 @@
+{
+	"appId": "com.algorise.giraplus",
+	"appName": "Gira++",
+	"webDir": "build",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"launchAutoHide": true,
+			"showSpinner": false,
+			"androidScaleType": "CENTER_CROP",
+			"splashFullScreen": true,
+			"splashImmersive": true,
+			"launchFadeOutDuration": 0
+		},
+		"CapacitorHttp": {},
+		"Keyboard": {
+			"resize": "none"
+		}
+	},
+	"android": {
+		"useLegacyBridge": true
+	},
+	"ios": {
+		"scheme": "Gira++"
+	}
+}

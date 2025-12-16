@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1A1A1A;
+    --color-background: white;
+    --color-background-secondary: #F5F5F5;
+    --color-background-tertiary: #E5E5E5;
+    --color-label: #B3B3B3;
+    --color-info: #808080;
+    --color-warning: #ffa929;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-selection: #d4d4d4;
+  }
+
+  :root[data-theme='dark'] {
+    --color-primary: #E8E8E8;
+    --color-background: #202020;
+    --color-background-secondary: #262626;
+    --color-background-tertiary: #3B3B3B;
+    --color-label: #808080;
+    --color-info: #B3B3B3;
+    --color-warning: #ffbc56;
+    --color-shadow: rgba(0, 0, 0, 0.4);
+    --color-selection: #808080;
+  }
+}
+
+body {
+  @apply bg-background;
+}
+
+* {
+  user-select: none;
+}
+
+*::selection {
+  background-color: var(--color-selection);
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  @apply !bg-background;
+}
+.maplibregl-ctrl-attrib.maplibregl-compact * {
+  @apply !text-info;
+}
+.maplibregl-ctrl-attrib.maplibregl-compact summary {
+  @apply dark:invert;
+}

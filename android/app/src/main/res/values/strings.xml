@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gira++</string>
+    <string name="title_activity_main">Gira++</string>
+    <string name="package_name">com.algorise.giraplus</string>
+    <string name="custom_url_scheme">com.algorise.giraplus</string>
+    <string name="capacitor_background_geolocation_notification_channel_name">Background Tracking</string>
+    <string name="capacitor_background_geolocation_notification_icon">drawable/ic_tracking</string>
+</resources>

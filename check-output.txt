@@ -1,0 +1,48 @@
+Loading svelte-check in workspace: c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main
+Getting Svelte diagnostics...
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\lib\translations.ts[39m:20:20
+[31mError[39m: Element implicitly has an 'any' type because expression of type 'Locale' can't be used to index type '{ readonly en: "Ok"; readonly pt: "Ok"; } | { readonly en: "Ignore this version"; readonly pt: "Ignorar esta vers├úo"; } | { readonly en: "New version available!"; readonly pt: "Nova vers├úo dispon├¡vel!"; } | ... 112 more ... | { ...; }'.
+  Property 'es' does not exist on type '{ readonly en: "Ok"; readonly pt: "Ok"; } | { readonly en: "Ignore this version"; readonly pt: "Ignorar esta vers├úo"; } | { readonly en: "New version available!"; readonly pt: "Nova vers├úo dispon├¡vel!"; } | ... 112 more ... | { ...; }'. 
+[36m		}
+		const template = [35mtranslations[key]?.[locale][36m;[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\lib\translations.ts[39m:27:42
+[31mError[39m: Parameter '_' implicitly has an 'any' type. 
+[36m
+		return template.replace(/{{(.*?)}}/g, ([35m_[36m, param) => {
+			return params[param.trim()] ?? '';[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\lib\translations.ts[39m:27:45
+[31mError[39m: Parameter 'param' implicitly has an 'any' type. 
+[36m
+		return template.replace(/{{(.*?)}}/g, (_, [35mparam[36m) => {
+			return params[param.trim()] ?? '';[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\routes\+layout.svelte[39m:23:6
+[31mError[39m: Cannot find name 'Capacitor'. (ts)
+[36m
+	if ([35mCapacitor[36m.getPlatform() === 'android' || Capacitor.getPlatform() === 'ios') {
+		StatusBar.setOverlaysWebView({ overlay: true });[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\routes\+layout.svelte[39m:23:47
+[31mError[39m: Cannot find name 'Capacitor'. (ts)
+[36m
+	if (Capacitor.getPlatform() === 'android' || [35mCapacitor[36m.getPlatform() === 'ios') {
+		StatusBar.setOverlaysWebView({ overlay: true });[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\routes\+layout.svelte[39m:51:8
+[31mError[39m: Cannot find name 'Capacitor'. (ts)
+[36m			document.documentElement.setAttribute('data-theme', currentTheme);
+			if ([35mCapacitor[36m.getPlatform() === 'android' || Capacitor.getPlatform() === 'ios') {
+				StatusBar.setStyle({ style: currentTheme === 'dark' ? Style.Dark : Style.Light });[39m
+
+c:\Users\Seif\Desktop\New folder (2)\gira-source\gira-mais-main\[32msrc\routes\+layout.svelte[39m:51:49
+[31mError[39m: Cannot find name 'Capacitor'. (ts)
+[36m			document.documentElement.setAttribute('data-theme', currentTheme);
+			if (Capacitor.getPlatform() === 'android' || [35mCapacitor[36m.getPlatform() === 'ios') {
+				StatusBar.setStyle({ style: currentTheme === 'dark' ? Style.Dark : Style.Light });[39m
+
+====================================
+[31msvelte-check found 7 errors and 0 warnings in 2 files
+[39m

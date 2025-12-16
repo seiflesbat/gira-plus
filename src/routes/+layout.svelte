@@ -1,0 +1,82 @@
+<script lang="ts">
+	import { safeInsets } from "$lib/ui.svelte";
+	import { appSettings } from "$lib/settings";
+	import "@fontsource-variable/inter/index.css";
+	import "@fontsource-variable/roboto-mono/index.css";
+	import { onMount } from "svelte";
+	import {
+		StatusBar,
+		Style,
+		NavigationBar,
+		ScreenOrientation,
+	} from "$lib/plugin-stubs";
+	import { SafeArea } from "capacitor-plugin-safe-area";
+	import "../app.css";
+	import { Capacitor } from "@capacitor/core";
+	import { App } from "@capacitor/app";
+	import { loadUserCreds, refreshToken, token } from "$lib/account";
+	import { updateActiveTripInfo, updateStations } from "$lib/injest-api-data";
+	import { loadSettings } from "$lib/settings";
+	import { reportAppUsageEvent } from "$lib/gira-mais-api/gira-mais-api";
+	import { watchPosition } from "$lib/location";
+	interface Props {
+		children?: import("svelte").Snippet;
+	}
+
+	let { children }: Props = $props();
+	import { theme } from "$lib/theme";
+
+	if (
+		Capacitor.getPlatform() === "android" ||
+		Capacitor.getPlatform() === "ios"
+	) {
+		StatusBar.setOverlaysWebView({ overlay: true });
+		NavigationBar.setTransparency({ isTransparent: true });
+		SafeArea.getSafeAreaInsets().then((ins) => {
+			safeInsets.set(ins.insets);
+		});
+	}
+
+	onMount(() => {
+		loadUserCreds();
+		loadSettings().then(() => {
+			reportAppUsageEvent();
+			appSettings.subscribe(() => {
+				watchPosition();
+			});
+		});
+		App.addListener("resume", async () => {
+			if ($token != null && $token.refreshToken != null) {
+				console.debug("Refreshing token because app was reopened");
+				await refreshToken();
+			}
+			updateActiveTripInfo();
+			updateStations();
+		});
+
+		theme.subscribe((currentTheme) => {
+			if (!currentTheme) return;
+			document.documentElement.setAttribute("data-theme", currentTheme);
+			if (
+				Capacitor.getPlatform() === "android" ||
+				Capacitor.getPlatform() === "ios"
+			) {
+				StatusBar.setStyle({
+					style: currentTheme === "dark" ? Style.Dark : Style.Light,
+				});
+			}
+		});
+
+		ScreenOrientation.lock({ orientation: "portrait" });
+
+		return () => {
+			App.removeAllListeners();
+		};
+	});
+</script>
+
+{#if $appSettings?.theme}
+	<div class="w-screen h-screen font-sans">
+		{@render children?.()}
+	</div>
+{/if}
