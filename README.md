@@ -23,6 +23,18 @@
 
 ---
 
+> **📌 About This Project**
+>
+> Gira++ is an **enhanced, privacy-focused fork** of the [original Gira+ project](https://github.com/jlvlg/gira-mais). While building upon the solid foundation of the original work, this version emphasizes three core improvements:
+>
+> - **🔐 Privacy First:** Completely rebuilt to eliminate all tracking, analytics, and third-party connections
+> - **🌍 Full Internationalization:** Professional translations in 9 languages with complete coverage across the entire interface
+> - **⚡ Enhanced Performance:** Optimized codebase for faster load times, smoother navigation, and a superior user experience
+>
+> We extend our gratitude to the original developers for their pioneering work. This fork aims to take the vision further by creating the most private, polished, and accessible Gira app experience available.
+
+---
+
 ## 🔒 Total Privacy — Zero Tracking
 
 > *"Your cycling journey is yours alone."*
