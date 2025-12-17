@@ -1,0 +1,30 @@
+# GitHub Pages Configuration
+title: "Gira++ - Privacy-Focused Lisbon Bike Sharing App"
+description: "The best alternative to Lisbon's official Gira bike-sharing app. 100% privacy, lightning-fast performance, supports 9 languages. Free, open-source Android app with zero tracking."
+url: "https://seiflesbat.github.io"
+baseurl: "/gira-plus"
+
+# SEO Settings
+lang: en_US
+author: Seif Lesbat
+keywords: "Gira, Lisbon, bike sharing, GIRA bikes, Lisboa bikes, bicycle rental Lisbon, privacy app, Android bike app, EMEL, Gira alternative, bike sharing Portugal, open source bike app"
+
+# Social
+twitter:
+  username: seiflesbat
+  card: summary_large_image
+
+# GitHub
+github:
+  repository_url: "https://github.com/seiflesbat/gira-plus"
+  repository_name: "gira-plus"
+  owner_name: "seiflesbat"
+
+# Additional SEO
+google_analytics: # Add if you want analytics (optional)
+google_site_verification: # Add after verifying with Google Search Console
+
+# Collections
+collections:
+  screenshots:
+    output: true
