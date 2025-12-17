@@ -6,6 +6,8 @@
 
 **The privacy-focused, lightning-fast alternative to the official Gira app**
 
+**🌐 [Visit Website](https://seiflesbat.github.io/gira-plus/) • 📥 [Download APK](../../releases/latest) • ❓ [FAQ](docs/FAQ.md)**
+
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android-blue.svg)]()
 [![Privacy](https://img.shields.io/badge/Privacy-100%25-brightgreen.svg)]()
