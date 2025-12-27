@@ -66,13 +66,13 @@ Full translations in English, Portuguese, and Arabic (including RTL support). Ev
 
 <div align="center">
 
-| Map View | Station Details | Profile |
-|:--------:|:---------------:|:-------:|
-| <img src="screenshots/map_overview.jpg" width="180"> | <img src="screenshots/station_view.jpg" width="180"> | <img src="screenshots/profile.jpg" width="180"> |
+| Map View | Station Details | Destination Finder |
+|:--------:|:---------------:|:------------------:|
+| <img src="screenshots/map_overview.jpg" width="180"> | <img src="screenshots/station_view.jpg" width="180"> | <img src="screenshots/destination_finder.jpg" width="180"> |
 
-| Settings | About |
-|:--------:|:-----:|
-| <img src="screenshots/settings.jpg" width="180"> | <img src="screenshots/about_page.jpg" width="180"> |
+| Profile | Settings | About |
+|:-------:|:--------:|:-----:|
+| <img src="screenshots/profile.jpg" width="180"> | <img src="screenshots/settings.jpg" width="180"> | <img src="screenshots/about_page.jpg" width="180"> |
 
 </div>
 
