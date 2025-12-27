@@ -37,16 +37,9 @@
 						bind:value={$appSettings.locale}
 						class="bg-background-secondary dark:bg-background-tertiary rounded-xl border-none focus:ring-0 text-sm"
 					>
-						<option value="system">{$t("system_locale")}</option>
 						<option value="en">English</option>
 						<option value="pt">Português</option>
-						<option value="es">Español</option>
-						<option value="fr">Français</option>
-						<option value="de">Deutsch</option>
-						<option value="it">Italiano</option>
 						<option value="ar">العربية</option>
-						<option value="ru">Русский</option>
-						<option value="hi">हिन्दी</option>
 					</select>
 				</div>
 				<div
@@ -67,8 +60,6 @@
 						bind:value={$appSettings.theme}
 						class="bg-background-secondary dark:bg-background-tertiary rounded-xl border-none focus:ring-0 text-sm"
 					>
-						<option value="system">{$t("system_theme")}</option>
-						<option value="daylight">{$t("daylight_theme")}</option>
 						<option value="light">{$t("light_theme")}</option>
 						<option value="dark">{$t("dark_theme")}</option>
 					</select>
@@ -115,26 +106,6 @@
 						</div>
 					</div>
 					<Toggle bind:checked={$appSettings.backgroundLocation} />
-				</div>
-			</div>
-		</div>
-
-		<!-- Privacy Section -->
-		<div class="flex flex-col gap-4">
-			<div class="text-lg font-semibold text-info px-2">
-				{$t("privacy_section")}
-			</div>
-			<div class="flex flex-col gap-2">
-				<div
-					class="bg-background rounded-2xl py-5 px-5 text-info dark:bg-background-secondary"
-					style:box-shadow="0px 0px 12px 0px var(--color-shadow)"
-				>
-					<div class="font-semibold leading-tight mb-2 text-primary">
-						🔒 {$t("privacy_title")}
-					</div>
-					<div class="text-sm font-medium leading-relaxed text-label">
-						{$t("privacy_message")}
-					</div>
 				</div>
 			</div>
 		</div>

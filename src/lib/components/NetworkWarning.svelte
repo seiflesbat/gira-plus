@@ -1,11 +1,16 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
-	import { safeInsets } from '$lib/ui.svelte';
-	import IconWifiOff from '@tabler/icons-svelte/icons/wifi-off';
-	import { t } from '$lib/translations';
+	import { fly } from "svelte/transition";
+	import { safeInsets } from "$lib/ui.svelte";
+	import IconWifiOff from "@tabler/icons-svelte/icons/wifi-off";
+	import { t } from "$lib/translations";
+	import { getLastUpdateLabel, hasCachedData } from "$lib/offlineCache";
 
 	export let tripStatusHeight: number = 0;
 	export let tripStatusWidth: number = 0;
+
+	// Get last update label from cache
+	$: lastUpdate = getLastUpdateLabel();
+	$: hasCache = hasCachedData();
 </script>
 
 <div
@@ -18,7 +23,12 @@
 	<div class="flex items-center justify-center gap-2 p-2">
 		<IconWifiOff size={24} stroke={1.7} class="text-info" />
 		<span class="font-bold text-info text-sm mx-1 whitespace-nowrap">
-			{$t('network_offline_warning')}
+			{$t("network_offline_warning")}
 		</span>
 	</div>
+	{#if hasCache}
+		<span class="text-xs text-label opacity-70 -mt-1 mb-1">
+			{$t("last_updated", { time: lastUpdate })}
+		</span>
+	{/if}
 </div>

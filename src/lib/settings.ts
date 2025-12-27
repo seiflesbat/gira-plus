@@ -8,8 +8,8 @@ export type AppSettings = {
 	distanceLock: boolean;
 	mockUnlock: boolean;
 	backgroundLocation: boolean;
-	theme: 'light' | 'dark' | 'system' | 'daylight';
-	locale: 'system' | 'en' | 'pt' | 'es' | 'fr' | 'de' | 'it' | 'ar' | 'ru' | 'hi';
+	theme: 'light' | 'dark';
+	locale: 'en' | 'pt' | 'ar';
 };
 
 /**
@@ -24,8 +24,8 @@ const DEFAULT_SETTINGS: AppSettings = {
 	distanceLock: true,
 	mockUnlock: true,
 	backgroundLocation: true,
-	theme: 'system',
-	locale: 'system',
+	theme: 'dark',
+	locale: 'en',
 };
 
 /**

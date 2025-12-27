@@ -19,6 +19,16 @@
 	import { loadSettings } from "$lib/settings";
 	import { reportAppUsageEvent } from "$lib/gira-mais-api/gira-mais-api";
 	import { watchPosition } from "$lib/location";
+	import { loadFavorites } from "$lib/favorites";
+	import {
+		initPrediction,
+		collectAllStations,
+		forceSavePatterns,
+	} from "$lib/prediction";
+	import { initOfflineCache, cacheStations } from "$lib/offlineCache";
+	import { initAddressStorage } from "$lib/addressStorage";
+	import { stations } from "$lib/map.svelte";
+
 	interface Props {
 		children?: import("svelte").Snippet;
 	}
@@ -38,13 +48,28 @@
 	}
 
 	onMount(() => {
+		// Initialize core services
 		loadUserCreds();
+		loadFavorites();
+		initPrediction();
+		initOfflineCache();
+		initAddressStorage();
+
 		loadSettings().then(() => {
 			reportAppUsageEvent();
 			appSettings.subscribe(() => {
 				watchPosition();
 			});
 		});
+
+		// Collect prediction data and cache when stations update
+		$effect(() => {
+			if (stations.value.length > 0) {
+				collectAllStations(stations.value);
+				cacheStations(stations.value);
+			}
+		});
+
 		App.addListener("resume", async () => {
 			if ($token != null && $token.refreshToken != null) {
 				console.debug("Refreshing token because app was reopened");
@@ -52,6 +77,11 @@
 			}
 			updateActiveTripInfo();
 			updateStations();
+		});
+
+		// Save prediction patterns when app goes to background
+		App.addListener("pause", () => {
+			forceSavePatterns();
 		});
 
 		theme.subscribe((currentTheme) => {
@@ -70,6 +100,7 @@
 		ScreenOrientation.lock({ orientation: "portrait" });
 
 		return () => {
+			forceSavePatterns();
 			App.removeAllListeners();
 		};
 	});

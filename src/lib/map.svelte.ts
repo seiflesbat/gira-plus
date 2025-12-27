@@ -5,11 +5,12 @@ import { getCssVariable } from '$lib/utils';
 import { theme } from '$lib/theme';
 import maplibregl from 'maplibre-gl';
 import { currentPos } from '$lib/location';
+import { favoriteStations } from '$lib/favorites';
 
-export type StationInfo ={
+export type StationInfo = {
 	code: string;
 	name: string;
-	description: string|null;
+	description: string | null;
 	latitude: number;
 	longitude: number;
 	bikes: number;
@@ -18,32 +19,41 @@ export type StationInfo ={
 	assetStatus: string;
 }
 
-export const stations = $state<{value:StationInfo[]}>({ value: [] });
-export const selectedStation = writable<string|null>(null);
+export const stations = $state<{ value: StationInfo[] }>({ value: [] });
+export const selectedStation = writable<string | null>(null);
 export const following = writable<boolean>(false);
+// Stations to highlight with pulsing effect (from destination finder)
+export const highlightedStations = writable<Set<string>>(new Set());
 
 export function setSourceData(map: maplibregl.Map) {
 	const src = map.getSource('points');
+	const favorites = get(favoriteStations);
+	const highlighted = get(highlightedStations);
 
 	const data: GeoJSON = {
 		'type': 'FeatureCollection',
-		'features': stations.value.map(station => ({
-			type: 'Feature',
-			properties: {
-				code: station.code,
-				serialNumber: station.serialNumber,
-				name: station.name,
-				bikes: station.bikes,
-				selected: station.serialNumber == get(selectedStation),
-				inService: station.assetStatus === 'active',
-				docks: station.docks,
-				freeDocks: station.docks - station.bikes,
-			},
-			geometry: {
-				type: 'Point',
-				coordinates: [station.longitude, station.latitude],
-			},
-		})),
+		'features': stations.value.map(station => {
+			return {
+				type: 'Feature',
+				properties: {
+					code: station.code,
+					serialNumber: station.serialNumber,
+					name: station.name,
+					bikes: station.bikes,
+					selected: station.serialNumber == get(selectedStation),
+					inService: station.assetStatus === 'active',
+					docks: station.docks,
+					freeDocks: station.docks - station.bikes,
+					isFavorite: favorites.has(station.serialNumber),
+					isHighlighted: highlighted.has(station.serialNumber),
+					bikesDocksLabel: `${station.bikes}/${station.docks}`,
+				},
+				geometry: {
+					type: 'Point',
+					coordinates: [station.longitude, station.latitude],
+				},
+			};
+		}),
 	};
 	if (src instanceof maplibregl.GeoJSONSource) {
 		src.setData(data);
@@ -56,7 +66,7 @@ export function setSourceData(map: maplibregl.Map) {
 	const userSrc = map.getSource('user-location');
 
 	const pos = get(currentPos);
-	const userLocationData:GeoJSON.GeoJSON = pos ? {
+	const userLocationData: GeoJSON.GeoJSON = pos ? {
 		'type': 'FeatureCollection',
 		'features': [{
 			type: 'Feature',
@@ -90,7 +100,7 @@ export function setSourceData(map: maplibregl.Map) {
 	}
 }
 
-export async function loadSvg(url: string, replaces?:Record<string, string>): Promise<HTMLImageElement> {
+export async function loadSvg(url: string, replaces?: Record<string, string>): Promise<HTMLImageElement> {
 	let svgData = await (await fetch(url)).text();
 	return new Promise((resolve, reject) => {
 		if (replaces) {
@@ -185,6 +195,47 @@ export function addLayers(map: maplibregl.Map) {
 			'icon-padding': 0,
 		},
 	});
+	// Text layer showing bikes/docks format inside the bubble - polished design
+	map.addLayer({
+		'id': 'station-labels',
+		'type': 'symbol',
+		'source': 'points',
+		'layout': {
+			'text-field': ['get', 'bikesDocksLabel'],
+			'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+			// Font size scales smoothly with zoom for optimal readability
+			'text-size': ['interpolate', ['linear'], ['zoom'], 10, 9, 12, 12, 15, 16],
+			// Offset calculated to center text in bubble circle (circle is at top of marker)
+			'text-offset': [0, -2.8],
+			'text-anchor': 'bottom',
+			'text-allow-overlap': true,
+			'text-ignore-placement': true,
+			'text-letter-spacing': 0.05,
+		},
+		'paint': {
+			// Primary color for normal stations, red for favorites
+			'text-color': ['case', ['get', 'isFavorite'], '#ef4444', getCssVariable('--color-primary')],
+			// Strong halo for excellent visibility against any background
+			'text-halo-color': getCssVariable('--color-background'),
+			'text-halo-width': 2,
+			'text-halo-blur': 0.5,
+		},
+	});
+	// Pulsing highlight layer for destination finder suggested stations
+	map.addLayer({
+		'id': 'station-highlights',
+		'type': 'circle',
+		'source': 'points',
+		'filter': ['==', ['get', 'isHighlighted'], true],
+		'paint': {
+			'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, 15, 15, 30],
+			'circle-color': getCssVariable('--color-primary'),
+			'circle-opacity': 0.4,
+			'circle-stroke-width': 3,
+			'circle-stroke-color': getCssVariable('--color-primary'),
+			'circle-stroke-opacity': 0.8,
+		},
+	}, 'station-markers'); // Insert before station-markers so it renders behind
 	map.addLayer({
 		'id': 'user-location',
 		'type': 'symbol',
@@ -204,7 +255,7 @@ export async function loadImages(map: maplibregl.Map) {
 		shadow_strength: get(theme) === 'light' ? '0.25' : '1',
 	};
 
-	function addOrReplace(id:string, img: Parameters<typeof map.addImage>[1], options: Parameters<typeof map.addImage>[2] = {}) {
+	function addOrReplace(id: string, img: Parameters<typeof map.addImage>[1], options: Parameters<typeof map.addImage>[2] = {}) {
 		if (map.hasImage(id)) {
 			map.updateImage(id, img);
 		} else {
@@ -223,19 +274,15 @@ export async function loadImages(map: maplibregl.Map) {
 	const context = canvas.getContext('2d', { willReadFrequently: true })!;
 	const start = performance.now();
 	await Promise.all(imgs.map(([name, url, color]) => loadSvg(url, replaces).then(img => {
+		canvas.width = img.width;
+		canvas.height = img.height;
 		context.clearRect(0, 0, img.width, img.height);
 		context.drawImage(img, 0, 0);
 		const imageWithoutNumber = context.getImageData(0, 0, img.width, img.height);
-		canvas.width = img.width;
-		canvas.height = img.height;
-		context.font = 'bold 44px Inter';
-		context.textAlign = 'center';
-		context.fillStyle = color;
+		// Register the same clean bubble image for all values (0-49)
+		// The bikes/docks label is now displayed by the text layer instead
 		for (let i = 0; i < 50; i++) {
-			context.putImageData(imageWithoutNumber, 0, 0);
-			context.fillText(i.toString(), img.width / 2, img.height / 1.65);
-			const newImg = context.getImageData(0, 0, img.width, img.height);
-			addOrReplace(`${name}-${i}`, newImg);
+			addOrReplace(`${name}-${i}`, imageWithoutNumber);
 		}
 	})));
 	console.debug(`Loaded images in ${performance.now() - start}ms`);

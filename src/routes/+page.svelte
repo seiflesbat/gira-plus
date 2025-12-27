@@ -26,6 +26,7 @@
 	import NetworkWarning from "$lib/components/NetworkWarning.svelte";
 	import { networkStatus } from "$lib/network";
 	import Dialog from "$lib/components/Dialog.svelte";
+	import DestinationFinder from "$lib/components/DestinationFinder.svelte";
 
 	let backListener: PluginListenerHandle;
 	let menuHeight = $state(0);
@@ -33,7 +34,9 @@
 	let tripStatusHeight: number = $state(0);
 	let tripStatusWidth: number = $state(0);
 	let profileOpen = $state(false);
+	let destinationFinderOpen = $state(false);
 	let locationPermission = $state(false);
+	let flyToCoords: (lat: number, lng: number) => void = () => {};
 
 	onMount(() => {
 		(async () => {
@@ -78,6 +81,7 @@
 		bind:bottomPadding={menuHeight}
 		bind:topPadding={tripStatusHeight}
 		bind:leftPadding={tripStatusWidth}
+		bind:flyToCoords
 	/>
 
 	{#if $currentTrip !== null}
@@ -104,7 +108,34 @@
 	{/if}
 
 	<Floating right={20} y={stationMenuPos} bottom offset={20}>
-		<LocationButton bind:locationPermission />
+		<div class="flex gap-3">
+			<!-- Destination Finder Button -->
+			<button
+				class="bg-background dark:bg-background-secondary p-2 rounded-full w-12 h-12 flex items-center justify-center active:bg-background dark:active:bg-background-tertiary transition-colors"
+				style:box-shadow="0px 0px 20px 0px var(--color-shadow)"
+				onclick={() => (destinationFinderOpen = true)}
+				aria-label="Find destination"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="text-primary"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					fill="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+					<path
+						d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z"
+					/>
+				</svg>
+			</button>
+			<LocationButton bind:locationPermission />
+		</div>
 	</Floating>
 
 	<Floating right={16} y={tripStatusHeight} offset={16}>
@@ -127,6 +158,10 @@
 		<Profile onclose={() => (profileOpen = false)} />
 	{/if}
 	<Dialog />
+	<DestinationFinder
+		bind:isOpen={destinationFinderOpen}
+		onFlyTo={flyToCoords}
+	/>
 </div>
 
 <InfoDialog />

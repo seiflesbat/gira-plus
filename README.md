@@ -1,272 +1,174 @@
 <div align="center">
 
-# 🚴 Gira++
+# Gira++
 
-### *Lisbon Bike-Sharing, Reimagined*
+### *The Definitive Lisbon Bike-Sharing Experience*
 
-**The privacy-focused, lightning-fast alternative to the official Gira app**
+**Privacy-first. Blazing fast. Beautifully crafted.**
 
-**🌐 [Visit Website](https://seiflesbat.github.io/gira-plus/) • 📥 [Download APK](../../releases/latest) • ❓ [FAQ](docs/FAQ.md)**
+**[Visit Website](https://seiflesbat.github.io/gira-plus/) · [Download APK](../../releases/latest) · [FAQ](docs/FAQ.md)**
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android-blue.svg)]()
-[![Privacy](https://img.shields.io/badge/Privacy-100%25-brightgreen.svg)]()
-[![Languages](https://img.shields.io/badge/Languages-9-orange.svg)]()
+[![Privacy](https://img.shields.io/badge/Tracking-None-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/Version-3.6.3-orange.svg)]()
 
 <br>
 
-<img src="screenshots/map-stations.png" width="200" alt="Map with stations">
+<img src="screenshots/map_overview.jpg" width="200" alt="Map Overview">
 &nbsp;&nbsp;&nbsp;
-<img src="screenshots/settings.png" width="200" alt="Settings">
+<img src="screenshots/station_view.jpg" width="200" alt="Station Details">
 &nbsp;&nbsp;&nbsp;
-<img src="screenshots/trips.png" width="200" alt="Trip history">
+<img src="screenshots/settings.jpg" width="200" alt="Settings">
 
 </div>
 
 ---
 
-> **📌 About This Project**
->
-> Gira++ is an **enhanced, privacy-focused fork** of the [original Gira+ project](https://github.com/jlvlg/gira-mais). While building upon the solid foundation of the original work, this version emphasizes three core improvements:
->
-> - **🔐 Privacy First:** Completely rebuilt to eliminate all tracking, analytics, and third-party connections
-> - **🌍 Full Internationalization:** Professional translations in 9 languages with complete coverage across the entire interface
-> - **⚡ Enhanced Performance:** Optimized codebase for faster load times, smoother navigation, and a superior user experience
->
-> We extend our gratitude to the original developers for their pioneering work. This fork aims to take the vision further by creating the most private, polished, and accessible Gira app experience available.
+## Overview
+
+Gira++ is a complete reimagining of the Lisbon bike-sharing experience. Built from the ground up with a focus on privacy, performance, and user experience, it delivers everything the official app should be—without the tracking, bloat, or frustration.
+
+This is not just another fork. It's a statement: software can be both powerful and respectful of its users.
 
 ---
 
-## 🔒 Total Privacy — Zero Tracking
+## What's New in v3.6.3
 
-> *"Your cycling journey is yours alone."*
+### Destination Finder
+Search any address in Lisbon and instantly see the nearest stations with available docks. The interface stays open while you explore the map, giving you complete freedom to pan, zoom, and check multiple stations before making your choice.
 
-Unlike most apps, **Gira++ sends absolutely no data to third parties**. We don't track your rides, collect analytics, or share your information with anyone.
+### Address History & Favorites
+Your recent searches are saved automatically. Mark frequently visited locations with a tap and access them instantly on your next ride.
 
-| Feature | Gira++ | Others |
-|---------|:------:|:------:|
-| No analytics tracking | ✅ | ❌ |
-| No third-party servers | ✅ | ❌ |
-| No device fingerprinting | ✅ | ❌ |
-| No usage reports | ✅ | ❌ |
-| Open source | ✅ | ❌ |
+### Smart Station Labels
+Every station bubble now displays real-time availability in a clear `bikes/docks` format. Favorite stations are highlighted in red for instant recognition.
 
-**The app only communicates with the official EMEL/Gira API** — nothing else.
+### Refined Interface
+A cleaner map view with no attribution clutter. Professional glassmorphism design throughout. Full Arabic translation including RTL support and a verse from Al-Mulk (67:15).
 
 ---
 
-## ⚡ Lightning Fast & Lightweight
+## Core Principles
 
-Built with performance in mind:
+### Privacy Without Compromise
+Zero tracking. Zero analytics. Zero data collection. The app communicates only with the official EMEL/Gira API—nothing else touches the network.
 
-- **17 MB** APK size — no bloat
-- **Instant** station loading
-- **Real-time** bike availability via WebSocket
-- **Smooth** map navigation
-- **Zero** unnecessary background processes
+### Performance That Respects Your Time
+17 MB package. Instant station loading. Real-time WebSocket updates. No background processes draining your battery.
 
----
-
-## 🌍 9 Languages Supported
-
-Gira++ speaks your language:
-
-| Language | Native Name |
-|----------|-------------|
-| 🇬🇧 English | English |
-| 🇵🇹 Portuguese | Português |
-| 🇪🇸 Spanish | Español |
-| 🇫🇷 French | Français |
-| 🇩🇪 German | Deutsch |
-| 🇮🇹 Italian | Italiano |
-| 🇸🇦 Arabic | العربية |
-| 🇷🇺 Russian | Русский |
-| 🇮🇳 Hindi | हिन्दी |
+### Internationalization Done Right
+Full translations in English, Portuguese, Spanish, French, German, Italian, Arabic, Russian, and Hindi. Every string, every corner of the interface.
 
 ---
 
-## ✨ Features
-
-<table>
-<tr>
-<td width="50%">
-
-### 🗺️ Interactive Map
-- Real-time station availability
-- Bike count at each station
-- Your location tracking
-- Clean, minimal design
-
-</td>
-<td width="50%">
-
-### 🚲 Easy Bike Rental
-- One-tap bike unlock
-- Smart distance limiting
-- Electric & classic bikes
-- Seamless experience
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 📊 Trip History
-- Complete ride records
-- Duration & stations
-- Bike identification
-- Date organization
-
-</td>
-<td width="50%">
-
-### ⚙️ Customizable
-- Light/Dark themes
-- Daylight auto-theme
-- Language selection
-- Privacy controls
-
-</td>
-</tr>
-</table>
-
----
-
-## 📱 Screenshots
+## Screenshots
 
 <div align="center">
 
-| Map View | Stations | About |
-|:--------:|:--------:|:-----:|
-| <img src="screenshots/map-light.png" width="180"> | <img src="screenshots/map-stations.png" width="180"> | <img src="screenshots/about.png" width="180"> |
+| Map View | Station Details | Profile |
+|:--------:|:---------------:|:-------:|
+| <img src="screenshots/map_overview.jpg" width="180"> | <img src="screenshots/station_view.jpg" width="180"> | <img src="screenshots/profile.jpg" width="180"> |
 
-| Settings | Trips |
+| Settings | About |
 |:--------:|:-----:|
-| <img src="screenshots/settings.png" width="180"> | <img src="screenshots/trips.png" width="180"> |
+| <img src="screenshots/settings.jpg" width="180"> | <img src="screenshots/about_page.jpg" width="180"> |
 
 </div>
 
 ---
 
-## 📥 Download
+## Features
 
-### Latest Release: v2.4.0
+**Interactive Map**
+- Real-time station availability with bikes/docks display
+- Favorite station highlighting in red
+- Clean, distraction-free interface
+- Smooth navigation and zoom
 
-[⬇️ **Download APK**](../../releases/latest)
+**Destination Finder**
+- Address search with autocomplete
+- Nearest stations with dock availability
+- Click-to-view with map fly animation
+- Search history and saved addresses
 
-> **Requirements:** Android 7.0+ (API 24)
+**Trip Management**
+- One-tap bike unlock
+- Smart 35m distance limiting
+- Complete ride history
+- Active trip notifications
+
+**Customization**
+- Light and dark themes
+- 9 language options
+- Background location toggle
+- Minimal, focused settings
 
 ---
 
-## 🛠️ Building from Source
+## Download
+
+### Latest Release: v3.6.3
+
+[**Download APK**](../../releases/latest)
+
+Requirements: Android 7.0+ (API 24)
+
+---
+
+## Building from Source
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/gira-plus.git
+git clone https://github.com/SeifLesbat/gira-plus.git
 cd gira-plus
 
-# Install dependencies
 npm install
-
-# Build the web app
 npm run build
-
-# Sync with Android
 npx cap sync android
 
-# Build APK
 cd android && ./gradlew assembleDebug
 ```
 
 ---
 
-## 🏗️ Tech Stack
+## Technology
 
-| Technology | Purpose |
-|------------|---------|
-| **SvelteKit 5** | Frontend framework |
-| **Capacitor** | Native Android bridge |
-| **MapLibre GL** | Map rendering |
-| **TypeScript** | Type-safe development |
-| **Vite** | Build tooling |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+| Component | Technology |
+|-----------|------------|
+| Framework | SvelteKit 5 |
+| Native Bridge | Capacitor |
+| Maps | MapLibre GL |
+| Language | TypeScript |
+| Build | Vite |
 
 ---
 
-## 📄 License
+## Contributing
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
-## ⚠️ Legal Disclaimer
-
-### No Affiliation
-Gira++ is an **independent, open-source, community-driven project**. It is **NOT** affiliated with, endorsed by, sponsored by, or in any way officially connected to:
-- **EMEL** (Empresa Municipal de Mobilidade e Estacionamento de Lisboa)
-- **Gira** (the official bike-sharing service)
-- **Câmara Municipal de Lisboa** (Lisbon City Council)
-- Any of their subsidiaries, affiliates, or partners
-
-All product names, logos, and brands mentioned are property of their respective owners.
-
-### No Warranty
-This software is provided **"AS IS"**, without warranty of any kind, express or implied, including but not limited to:
-- Merchantability
-- Fitness for a particular purpose
-- Non-infringement
-- Accuracy or reliability of information
-- Continuous, uninterrupted, or error-free operation
-
-### Limitation of Liability
-**IN NO EVENT** shall the authors, contributors, or copyright holders be liable for:
-- Any direct, indirect, incidental, special, exemplary, or consequential damages
-- Loss of use, data, profits, or business interruption
-- Any claims by third parties
-- Any damages arising from the use or inability to use this software
-
-This limitation applies regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if advised of the possibility of such damages.
-
-### Third-Party Services
-This application interacts with the official Gira/EMEL API. The developers of Gira++:
-- Have no control over the availability or functionality of external services
-- Are not responsible for any changes, disruptions, or discontinuation of third-party APIs
-- Cannot guarantee compatibility with future versions of external services
-
-### User Responsibility
-By using this application, you agree that:
-- You use it entirely **at your own risk**
-- You are responsible for compliance with all applicable laws and terms of service
-- You will not hold the developers liable for any consequences of using this app
-- You understand this is an unofficial application
-
-### Intellectual Property
-This project does not claim ownership of any trademarks, service marks, or logos of third parties. Any use of third-party intellectual property is for identification purposes only and does not imply endorsement.
-
-### Governing Law
-Any disputes arising from the use of this software shall be governed by applicable open-source software laws and the MIT License terms.
+Contributions are welcome. Fork the repository, create a feature branch, and submit a pull request.
 
 ---
 
-## 📄 License
+## Legal Notice
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+Gira++ is an independent, open-source project. It is not affiliated with, endorsed by, or connected to EMEL, Gira, or Câmara Municipal de Lisboa.
+
+This software is provided as-is, without warranty of any kind. Users assume all responsibility for its use. The developers are not liable for any damages arising from the use of this application.
+
+The app interacts with the official Gira/EMEL API. Service availability depends on third-party infrastructure outside our control.
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for Lisbon cyclists**
+**Built for Lisbon cyclists who deserve better.**
 
-*By [Seif Lesbat](mailto:Algorise@usa.com)*
+*[Seif Lesbat](mailto:Algorise@usa.com)*
 
 </div>

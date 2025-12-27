@@ -1,13 +1,13 @@
 import { appSettings } from './settings';
 import { derived, get } from 'svelte/store';
 
-type Locale = 'en' | 'pt' | 'es' | 'fr' | 'de' | 'it' | 'ar' | 'ru' | 'hi';
+type Locale = 'en' | 'pt' | 'ar';
 
-const supportedLocales: Locale[] = ['en', 'pt', 'es', 'fr', 'de', 'it', 'ar', 'ru', 'hi'];
+const supportedLocales: Locale[] = ['en', 'pt', 'ar'];
 
 export function getLocale() {
 	const settings = get(appSettings);
-	const locale = settings.locale === 'system' ? navigator.language.split('-')[0] : settings.locale;
+	const locale = settings?.locale ?? 'en';
 	return (supportedLocales.includes(locale as Locale) ? locale : 'en') as Locale;
 }
 
@@ -1319,6 +1319,71 @@ const translations = {
 		ar: '❤️ دعم التطوير',
 		ru: 'Поддержать Разработку ❤️',
 		hi: 'विकास का समर्थन करें ❤️',
+	},
+	search_destination: {
+		en: 'Search destination...',
+		pt: 'Pesquisar destino...',
+		ar: 'ابحث عن الوجهة...',
+	},
+	nearest_stations: {
+		en: 'Nearest Stations',
+		pt: 'Estações Mais Próximas',
+		ar: 'أقرب المحطات',
+	},
+	search_hint: {
+		en: 'Search for an address to find nearby stations',
+		pt: 'Pesquise um endereço para encontrar estações próximas',
+		ar: 'ابحث عن عنوان للعثور على المحطات القريبة',
+	},
+	prediction_label: {
+		en: 'Predicted',
+		pt: 'Previsto',
+		ar: 'متوقع',
+	},
+	confidence_high: {
+		en: 'High confidence',
+		pt: 'Alta confiança',
+		ar: 'ثقة عالية',
+	},
+	confidence_medium: {
+		en: 'Medium confidence',
+		pt: 'Média confiança',
+		ar: 'ثقة متوسطة',
+	},
+	confidence_low: {
+		en: 'Low confidence',
+		pt: 'Baixa confiança',
+		ar: 'ثقة منخفضة',
+	},
+	offline_mode: {
+		en: 'Offline',
+		pt: 'Offline',
+		ar: 'غير متصل',
+	},
+	last_updated: {
+		en: 'Updated {{time}}',
+		pt: 'Atualizado {{time}}',
+		ar: 'تم التحديث {{time}}',
+	},
+	about_quote: {
+		en: '"Sometimes the best solutions come from those who simply refuse to accept that something is broken."',
+		pt: '"Às vezes, as melhores soluções vêm daqueles que simplesmente se recusam a aceitar que algo está estragado."',
+		ar: '"أحيانًا تأتي أفضل الحلول من أولئك الذين يرفضون ببساطة قبول أن شيئًا ما معطل."',
+	},
+	author_name: {
+		en: 'Seif Lesbat',
+		pt: 'Seif Lesbat',
+		ar: 'سيف لسبط',
+	},
+	quran_verse: {
+		en: 'He it is, Who has made the earth subservient to you, so walk in the path thereof and eat of His provision, and to Him will be the Resurrection.',
+		pt: 'Ele é Quem fez a terra submissa a vós, então caminhai pelos seus caminhos e comei do Seu sustento, e a Ele será a Ressurreição.',
+		ar: 'هُوَ الَّذِي جَعَلَ لَكُمُ الْأَرْضَ ذَلُولًا فَامْشُوا فِي مَنَاكِبِهَا وَكُلُوا مِن رِّزْقِهِ ۖ وَإِلَيْهِ النُّشُورُ',
+	},
+	quran_reference: {
+		en: 'Al-Mulk (67:15)',
+		pt: 'Al-Mulk (67:15)',
+		ar: '[ الملك: 15 ]',
 	},
 } as const;
 

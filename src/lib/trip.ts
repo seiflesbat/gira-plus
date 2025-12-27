@@ -12,34 +12,35 @@ import { ingestLastUnratedTrip, updateActiveTripInfo } from './injest-api-data';
 import type { StationInfo } from './map.svelte';
 import { t, type Translations } from './translations';
 import { IdToSerial } from '$lib/gira-api/bikeMapping';
+import { showTripNotification, dismissTripNotification } from '$lib/tripNotification';
 
 export type ActiveTrip = {
 	code: string,
-	bikePlate: string|null,
-	startPos: {lat: number, lng: number}|null,
-	destination: {lat: number, lng: number}|null,
+	bikePlate: string | null,
+	startPos: { lat: number, lng: number } | null,
+	destination: { lat: number, lng: number } | null,
 	traveledDistanceKm: number,
-	distanceLeft: number|null,
+	distanceLeft: number | null,
 	speed: number,
 	startDate: Date,
-	predictedEndDate: Date|null,
-	arrivalTime: Date|null,
+	predictedEndDate: Date | null,
+	arrivalTime: Date | null,
 	finished: boolean,
 	confirmed: boolean,
-	pathTaken : {lat: number, lng: number, time:Date}[],
+	pathTaken: { lat: number, lng: number, time: Date }[],
 	lastUpdate: Date | null,
 }
 export type TripRating = {
-	currentRating:{
-		code:string,
-		bikePlate:string,
-		startDate:Date,
-		endDate:Date,
-		tripPoints:number,
-	}|null,
+	currentRating: {
+		code: string,
+		bikePlate: string,
+		startDate: Date,
+		endDate: Date,
+		tripPoints: number,
+	} | null,
 }
 
-export const currentTrip = writable<ActiveTrip|null>(null);
+export const currentTrip = writable<ActiveTrip | null>(null);
 export const tripRating = writable<TripRating>({ currentRating: null });
 
 let updating = false;
@@ -60,8 +61,8 @@ async function checkTripStarted(serial: string) {
  * @param station 
  * @returns True if the trip was started successfully, false otherwise
  */
-export async function tryStartTrip(id: string, serial: string|null, station: StationInfo): Promise<boolean> {
-	if (serial == null){
+export async function tryStartTrip(id: string, serial: string | null, station: StationInfo): Promise<boolean> {
+	if (serial == null) {
 		serial = IdToSerial.get(id) ?? null;
 	}
 	if (serial == null) {
@@ -115,6 +116,7 @@ export async function tryStartTrip(id: string, serial: string|null, station: Sta
 					lastUpdate: new Date,
 				});
 				watchPosition();
+				showTripNotification(id);
 				return true;
 			} else {
 				errorMessages.add(get(t)('bike_unlock_error'));
@@ -154,7 +156,7 @@ export function checkTripActive() {
 
 	const t = get(token);
 	if (!t) return;
-	const jwt:JWT = JSON.parse(window.atob(t.accessToken.split('.')[1]));
+	const jwt: JWT = JSON.parse(window.atob(t.accessToken.split('.')[1]));
 
 	// Refresh token if it expires in less than 30 seconds and update trip info
 	if (jwt.exp * 1000 - Date.now() < 30 * 1000) {
@@ -173,6 +175,7 @@ export async function endTrip() {
 	// Attempt to pay with points just in case
 	if (trip) tripPayWithPoints(trip.code);
 
+	dismissTripNotification();
 	currentTrip.set(null);
 
 	// Check if there is a rating to be done
