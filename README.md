@@ -57,8 +57,8 @@ Zero tracking. Zero analytics. Zero data collection. The app communicates only w
 ### Performance That Respects Your Time
 17 MB package. Instant station loading. Real-time WebSocket updates. No background processes draining your battery.
 
-### Internationalization Done Right
-Full translations in English, Portuguese, Spanish, French, German, Italian, Arabic, Russian, and Hindi. Every string, every corner of the interface.
+### Internationalization
+Full translations in English, Portuguese, and Arabic (including RTL support). Every string, every corner of the interface.
 
 ---
 
@@ -100,7 +100,7 @@ Full translations in English, Portuguese, Spanish, French, German, Italian, Arab
 
 **Customization**
 - Light and dark themes
-- 9 language options
+- 3 language options (EN, PT, AR)
 - Background location toggle
 - Minimal, focused settings
 
