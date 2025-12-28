@@ -9,7 +9,7 @@ export type AppSettings = {
 	mockUnlock: boolean;
 	backgroundLocation: boolean;
 	theme: 'light' | 'dark';
-	locale: 'en' | 'pt' | 'ar';
+	locale: 'en' | 'pt' | 'es' | 'fr' | 'de' | 'it' | 'ar' | 'ru' | 'hi' | 'zh';
 };
 
 /**

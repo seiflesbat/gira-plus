@@ -11,7 +11,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Android-blue.svg)]()
 [![Privacy](https://img.shields.io/badge/Tracking-None-brightgreen.svg)]()
-[![Version](https://img.shields.io/badge/Version-3.6.3-orange.svg)]()
+[![Version](https://img.shields.io/badge/Version-3.7.0-orange.svg)]()
 
 <br>
 
@@ -33,19 +33,10 @@ This is not just another fork. It's a statement: software can be both powerful a
 
 ---
 
-## What's New in v3.6.3
+## What's New in v3.7.0
 
-### Destination Finder
-Search any address in Lisbon and instantly see the nearest stations with available docks. The interface stays open while you explore the map, giving you complete freedom to pan, zoom, and check multiple stations before making your choice.
-
-### Address History & Favorites
-Your recent searches are saved automatically. Mark frequently visited locations with a tap and access them instantly on your next ride.
-
-### Smart Station Labels
-Every station bubble now displays real-time availability in a clear `bikes/docks` format. Favorite stations are highlighted in red for instant recognition.
-
-### Refined Interface
-A cleaner map view with no attribution clutter. Professional glassmorphism design throughout. Full Arabic translation including RTL support and a verse from Al-Mulk (67:15).
+### 10 Languages - Now with Chinese Support
+Gira++ now speaks to the world! We've expanded from 3 to 10 fully translated languages including English, Portuguese, Spanish, French, German, Italian, Arabic (with RTL), Russian, Hindi, and Chinese (Simplified). Every string, every button, every message—professionally translated.
 
 ---
 
@@ -58,7 +49,7 @@ Zero tracking. Zero analytics. Zero data collection. The app communicates only w
 17 MB package. Instant station loading. Real-time WebSocket updates. No background processes draining your battery.
 
 ### Internationalization
-Full translations in English, Portuguese, and Arabic (including RTL support). Every string, every corner of the interface.
+Full translations in 10 languages: English, Portuguese, Spanish, French, German, Italian, Arabic (RTL), Russian, Hindi, and Chinese. Every string, every corner of the interface.
 
 ---
 
@@ -100,7 +91,7 @@ Full translations in English, Portuguese, and Arabic (including RTL support). Ev
 
 **Customization**
 - Light and dark themes
-- 3 language options (EN, PT, AR)
+- 10 language options (EN, PT, ES, FR, DE, IT, AR, RU, HI, ZH)
 - Background location toggle
 - Minimal, focused settings
 
@@ -108,7 +99,7 @@ Full translations in English, Portuguese, and Arabic (including RTL support). Ev
 
 ## Download
 
-### Latest Release: v3.6.3
+### Latest Release: v3.7.0
 
 [**Download APK**](../../releases/latest)
 

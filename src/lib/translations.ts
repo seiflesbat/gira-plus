@@ -1,9 +1,9 @@
 import { appSettings } from './settings';
 import { derived, get } from 'svelte/store';
 
-type Locale = 'en' | 'pt' | 'ar';
+type Locale = 'en' | 'pt' | 'es' | 'fr' | 'de' | 'it' | 'ar' | 'ru' | 'hi' | 'zh';
 
-const supportedLocales: Locale[] = ['en', 'pt', 'ar'];
+const supportedLocales: Locale[] = ['en', 'pt', 'es', 'fr', 'de', 'it', 'ar', 'ru', 'hi', 'zh'];
 
 export function getLocale() {
 	const settings = get(appSettings);
@@ -43,7 +43,8 @@ const translations = {
 		ar: 'موافق',
 		ru: 'Ок',
 		hi: 'ठीक है',
-	},
+	
+		zh: '好的',},
 	ignore_button: {
 		en: 'Ignore this version',
 		pt: 'Ignorar esta versão',
@@ -54,7 +55,8 @@ const translations = {
 		ar: 'تجاهل هذا الإصدار',
 		ru: 'Игнорировать эту версию',
 		hi: 'इस संस्करण को अनदेखा करें',
-	},
+	
+		zh: '忽略此版本',},
 	new_version_available: {
 		en: 'New version available!',
 		pt: 'Nova versão disponível!',
@@ -65,7 +67,8 @@ const translations = {
 		ar: 'إصدار جديد متاح!',
 		ru: 'Доступна новая версия!',
 		hi: 'नया संस्करण उपलब्ध!',
-	},
+	
+		zh: '有新版本可用！',},
 	see_release_notes: {
 		en: 'See release notes',
 		pt: 'Veja as novidades',
@@ -76,7 +79,8 @@ const translations = {
 		ar: 'عرض ملاحظات الإصدار',
 		ru: 'Смотреть примечания к выпуску',
 		hi: 'रिलीज़ नोट्स देखें',
-	},
+	
+		zh: '查看更新说明',},
 	update_warning_setting_note: {
 		en: 'You can disable this warning in the settings.',
 		pt: 'Pode desativar este aviso nas configurações.',
@@ -87,7 +91,8 @@ const translations = {
 		ar: 'يمكنك تعطيل هذا التحذير في الإعدادات.',
 		ru: 'Вы можете отключить это предупреждение в настройках.',
 		hi: 'आप सेटिंग्स में इस चेतावनी को अक्षम कर सकते हैं।',
-	},
+	
+		zh: '您可以在设置中禁用此警告。',},
 	distance_traveled: {
 		en: 'Distance Traveled',
 		pt: 'Distância Percorrida',
@@ -98,7 +103,8 @@ const translations = {
 		ar: 'المسافة المقطوعة',
 		ru: 'Пройденное расстояние',
 		hi: 'तय की गई दूरी',
-	},
+	
+		zh: '行驶距离',},
 	average_speed: {
 		en: 'Average Speed',
 		pt: 'Velocidade Média',
@@ -109,7 +115,8 @@ const translations = {
 		ar: 'متوسط السرعة',
 		ru: 'Средняя скорость',
 		hi: 'औसत गति',
-	},
+	
+		zh: '平均速度',},
 	distance_left: {
 		en: 'Distance Left',
 		pt: 'Distância em Falta',
@@ -120,7 +127,8 @@ const translations = {
 		ar: 'المسافة المتبقية',
 		ru: 'Оставшееся расстояние',
 		hi: 'बची हुई दूरी',
-	},
+	
+		zh: '剩余距离',},
 	time_left: {
 		en: 'Time Left',
 		pt: 'Tempo em Falta',
@@ -131,7 +139,8 @@ const translations = {
 		ar: 'الوقت المتبقي',
 		ru: 'Оставшееся время',
 		hi: 'बचा हुआ समय',
-	},
+	
+		zh: '剩余时间',},
 	arrival_time: {
 		en: 'Arrival Time',
 		pt: 'Hora de Chegada',
@@ -142,7 +151,8 @@ const translations = {
 		ar: 'وقت الوصول',
 		ru: 'Время прибытия',
 		hi: 'आगमन समय',
-	},
+	
+		zh: '到达时间',},
 	rate_trip_error: {
 		en: 'Error rating trip',
 		pt: 'Erro ao avaliar viagem',
@@ -153,7 +163,8 @@ const translations = {
 		ar: 'خطأ في تقييم الرحلة',
 		ru: 'Ошибка оценки поездки',
 		hi: 'यात्रा रेटिंग में त्रुटि',
-	},
+	
+		zh: '评价行程出错',},
 	last_trip_question: {
 		en: 'How was your last trip?',
 		pt: 'Como foi a sua última viagem?',
@@ -164,7 +175,8 @@ const translations = {
 		ar: 'كيف كانت رحلتك الأخيرة؟',
 		ru: 'Как прошла ваша последняя поездка?',
 		hi: 'आपकी आखिरी यात्रा कैसी रही?',
-	},
+	
+		zh: '您上次的行程如何？',},
 	station_label: {
 		en: 'Station',
 		pt: 'Estação',
@@ -175,7 +187,8 @@ const translations = {
 		ar: 'محطة',
 		ru: 'Станция',
 		hi: 'स्टेशन',
-	},
+	
+		zh: '站点',},
 	bikes_label: {
 		en: 'BIKES',
 		pt: 'BICICLETAS',
@@ -186,7 +199,8 @@ const translations = {
 		ar: 'دراجات',
 		ru: 'ВЕЛОСИПЕДЫ',
 		hi: 'बाइक',
-	},
+	
+		zh: '自行车',},
 	free_docks_label: {
 		en: 'FREE\nDOCKS',
 		pt: 'DOCAS\nLIVRES',
@@ -197,7 +211,8 @@ const translations = {
 		ar: 'محطات\nمتاحة',
 		ru: 'СВОБОДНЫЕ\nДОКИ',
 		hi: 'खाली\nडॉक्स',
-	},
+	
+		zh: '空闲\n停车位',},
 	duration_label: {
 		en: 'DURATION',
 		pt: 'DURAÇÃO',
@@ -208,7 +223,8 @@ const translations = {
 		ar: 'المدة',
 		ru: 'ДЛИТЕЛЬНОСТЬ',
 		hi: 'अवधि',
-	},
+	
+		zh: '时长',},
 	hours_label: {
 		en: 'h',
 		pt: 'h',
@@ -219,7 +235,8 @@ const translations = {
 		ar: 'س',
 		ru: 'ч',
 		hi: 'घं',
-	},
+	
+		zh: '时',},
 	minutes_label: {
 		en: 'min',
 		pt: 'min',
@@ -230,7 +247,8 @@ const translations = {
 		ar: 'د',
 		ru: 'мин',
 		hi: 'मि',
-	},
+	
+		zh: '分',},
 	trips_label: {
 		en: 'Trips',
 		pt: 'Viagens',
@@ -241,7 +259,8 @@ const translations = {
 		ar: 'رحلات',
 		ru: 'Поездки',
 		hi: 'यात्राएं',
-	},
+	
+		zh: '行程',},
 	no_trips_label: {
 		en: 'No trips',
 		pt: 'Nenhuma viagem',
@@ -252,7 +271,8 @@ const translations = {
 		ar: 'لا توجد رحلات',
 		ru: 'Нет поездок',
 		hi: 'कोई यात्रा नहीं',
-	},
+	
+		zh: '暂无行程',},
 	no_trips_registered_label: {
 		en: 'No trips registered',
 		pt: 'Não há viagens registadas',
@@ -263,7 +283,8 @@ const translations = {
 		ar: 'لا توجد رحلات مسجلة',
 		ru: 'Нет зарегистрированных поездок',
 		hi: 'कोई यात्रा पंजीकृत नहीं',
-	},
+	
+		zh: '暂无已登记的行程',},
 	about_label: {
 		en: 'About',
 		pt: 'Sobre',
@@ -274,7 +295,8 @@ const translations = {
 		ar: 'حول',
 		ru: 'О приложении',
 		hi: 'के बारे में',
-	},
+	
+		zh: '关于',},
 	app_description: {
 		en: 'Gira++ is a community-driven enhancement of the official Gira bike-sharing app. Built by listening to real feedback from cyclists in Lisbon who were frustrated with bugs, crashes, and missing features. This is what Gira should have been — faster, smoother, and actually works.',
 		pt: 'Gira++ é uma melhoria da app oficial Gira, feita pela comunidade. Construída ouvindo feedback real de ciclistas em Lisboa frustrados com bugs, crashes e funcionalidades em falta. Isto é o que a Gira deveria ter sido — mais rápida, mais fluida, e que realmente funciona.',
@@ -285,7 +307,8 @@ const translations = {
 		ar: 'Gira++ هو تحسين مجتمعي لتطبيق Gira الرسمي. تم بناؤه من خلال الاستماع إلى ملاحظات حقيقية من راكبي الدراجات في لشبونة.',
 		ru: 'Gira++ — это улучшенная версия официального приложения Gira от сообщества. Создана на основе реальных отзывов велосипедистов в Лиссабоне.',
 		hi: 'Gira++ आधिकारिक Gira ऐप का समुदाय-संचालित संवर्धन है। लिस्बन में साइकिल चालकों की वास्तविक प्रतिक्रिया सुनकर बनाया गया।',
-	},
+	
+		zh: 'Gira++ 是官方 Gira 共享单车应用的社区增强版本。它倾听里斯本骑行者对原版应用中的漏洞、崩溃和缺失功能的真实反馈而打造。这才是 Gira 应有的样子——更快、更流畅、真正好用。',},
 	not_official_disclaimer: {
 		en: 'The application is unofficial and not affiliated in any way with EMEL or Câmara Municipal de Lisboa.',
 		pt: 'A aplicação não é oficial, não estando afiliada de modo algum à EMEL ou à Câmara Municipal de Lisboa.',
@@ -296,7 +319,8 @@ const translations = {
 		ar: 'هذا التطبيق غير رسمي وليس له أي علاقة بـ EMEL أو بلدية لشبونة.',
 		ru: 'Это приложение неофициальное и никак не связано с EMEL или муниципалитетом Лиссабона.',
 		hi: 'यह एप्लिकेशन अनौपचारिक है और किसी भी तरह से EMEL या लिस्बन नगरपालिका से संबद्ध नहीं है।',
-	},
+	
+		zh: '本应用非官方出品，与 EMEL 或里斯本市政府无任何关联。',},
 	find_out_more_at: {
 		en: 'Find out more at ',
 		pt: 'Saiba mais em ',
@@ -307,7 +331,8 @@ const translations = {
 		ar: 'اكتشف المزيد على ',
 		ru: 'Узнайте больше на ',
 		hi: 'और जानें ',
-	},
+	
+		zh: '了解更多请访问 ',},
 	made_by: {
 		en: 'Made by',
 		pt: 'Desenvolvido por',
@@ -318,7 +343,8 @@ const translations = {
 		ar: 'صنع بواسطة',
 		ru: 'Разработчик',
 		hi: 'द्वारा निर्मित',
-	},
+	
+		zh: '开发者',},
 	open_source_license: {
 		en: 'Open-source project under the GPL-3.0 license',
 		pt: 'Projeto open-source sob a licença GPL-3.0',
@@ -329,7 +355,8 @@ const translations = {
 		ar: 'مشروع مفتوح المصدر بموجب ترخيص GPL-3.0',
 		ru: 'Проект с открытым исходным кодом под лицензией GPL-3.0',
 		hi: 'GPL-3.0 लाइसेंस के तहत ओपन-सोर्स प्रोजेक्ट',
-	},
+	
+		zh: 'GPL-3.0 许可证下的开源项目',},
 	user_label: {
 		en: 'User',
 		pt: 'Utilizador',
@@ -340,7 +367,8 @@ const translations = {
 		ar: 'مستخدم',
 		ru: 'Пользователь',
 		hi: 'उपयोगकर्ता',
-	},
+	
+		zh: '用户',},
 	balance_label: {
 		en: 'Balance',
 		pt: 'Saldo',
@@ -351,7 +379,8 @@ const translations = {
 		ar: 'الرصيد',
 		ru: 'Баланс',
 		hi: 'शेष',
-	},
+	
+		zh: '余额',},
 	points_label: {
 		en: 'Points',
 		pt: 'Pontos',
@@ -362,7 +391,8 @@ const translations = {
 		ar: 'نقاط',
 		ru: 'Баллы',
 		hi: 'अंक',
-	},
+	
+		zh: '积分',},
 	no_subscription_label: {
 		en: 'No subscription',
 		pt: 'Sem subscrição',
@@ -373,7 +403,8 @@ const translations = {
 		ar: 'لا يوجد اشتراك',
 		ru: 'Нет подписки',
 		hi: 'कोई सदस्यता नहीं',
-	},
+	
+		zh: '无订阅',},
 	annual_pass_label: {
 		en: 'Annual Pass',
 		pt: 'Passe Anual',
@@ -384,7 +415,8 @@ const translations = {
 		ar: 'اشتراك سنوي',
 		ru: 'Годовой проездной',
 		hi: 'वार्षिक पास',
-	},
+	
+		zh: '年卡',},
 	monthly_pass_label: {
 		en: 'Monthly Pass',
 		pt: 'Passe Mensal',
@@ -395,7 +427,8 @@ const translations = {
 		ar: 'اشتراك شهري',
 		ru: 'Месячный проездной',
 		hi: 'मासिक पास',
-	},
+	
+		zh: '月卡',},
 	daily_pass_label: {
 		en: 'Daily Pass',
 		pt: 'Passe Diário',
@@ -406,7 +439,8 @@ const translations = {
 		ar: 'اشتراك يومي',
 		ru: 'Дневной проездной',
 		hi: 'दैनिक पास',
-	},
+	
+		zh: '日卡',},
 	valid_until_label: {
 		en: 'Valid until {{date}}',
 		pt: 'Válido até {{date}}',
@@ -428,7 +462,8 @@ const translations = {
 		ar: 'السجل',
 		ru: 'История',
 		hi: 'इतिहास',
-	},
+	
+		zh: '历史',},
 	settings_label: {
 		en: 'Settings',
 		pt: 'Configurações',
@@ -439,7 +474,8 @@ const translations = {
 		ar: 'الإعدادات',
 		ru: 'Настройки',
 		hi: 'सेटिंग्स',
-	},
+	
+		zh: '设置',},
 	feedback_label: {
 		en: 'Feedback',
 		pt: 'Feedback',
@@ -450,7 +486,8 @@ const translations = {
 		ar: 'ملاحظات',
 		ru: 'Отзыв',
 		hi: 'प्रतिक्रिया',
-	},
+	
+		zh: '反馈',},
 	contribute_label: {
 		en: 'Contribute',
 		pt: 'Contribuir',
@@ -461,7 +498,8 @@ const translations = {
 		ar: 'المساهمة',
 		ru: 'Внести вклад',
 		hi: 'योगदान',
-	},
+	
+		zh: '贡献',},
 	star_label: {
 		en: 'Leave a star',
 		pt: 'Deixar uma estrela',
@@ -472,7 +510,8 @@ const translations = {
 		ar: 'اترك نجمة',
 		ru: 'Оставить звезду',
 		hi: 'स्टार छोड़ें',
-	},
+	
+		zh: '给个星星',},
 	exit_label: {
 		en: 'LOGOUT',
 		pt: 'SAIR',
@@ -483,7 +522,8 @@ const translations = {
 		ar: 'تسجيل الخروج',
 		ru: 'ВЫЙТИ',
 		hi: 'लॉग आउट',
-	},
+	
+		zh: '退出登录',},
 	welcome_message: {
 		en: 'Welcome to Gira++',
 		pt: 'Bem-vindo ao Gira++',
@@ -494,7 +534,8 @@ const translations = {
 		ar: 'مرحبا بك في Gira++',
 		ru: 'Добро пожаловать в Gira++',
 		hi: 'Gira++ में आपका स्वागत है',
-	},
+	
+		zh: '欢迎使用 Gira++',},
 	email_label: {
 		en: 'Email',
 		pt: 'Email',
@@ -505,7 +546,8 @@ const translations = {
 		ar: 'البريد الإلكتروني',
 		ru: 'Эл.почта',
 		hi: 'ईमेल',
-	},
+	
+		zh: '邮箱',},
 	email_placeholder: {
 		en: 'example@example.com',
 		pt: 'exemplo@exemplo.com',
@@ -516,7 +558,8 @@ const translations = {
 		ar: 'example@example.com',
 		ru: 'example@example.com',
 		hi: 'example@example.com',
-	},
+	
+		zh: 'example@example.com',},
 	password_label: {
 		en: 'Password',
 		pt: 'Password',
@@ -527,7 +570,8 @@ const translations = {
 		ar: 'كلمة المرور',
 		ru: 'Пароль',
 		hi: 'पासवर्ड',
-	},
+	
+		zh: '密码',},
 	invalid_credentials_error: {
 		en: 'Invalid credentials',
 		pt: 'Credenciais inválidas',
@@ -538,7 +582,8 @@ const translations = {
 		ar: 'بيانات الاعتماد غير صالحة',
 		ru: 'Неверные учетные данные',
 		hi: 'अमान्य क्रेडेंशियल',
-	},
+	
+		zh: '凭据无效',},
 	unknown_error: {
 		en: 'Unknown error',
 		pt: 'Erro desconhecido',
@@ -549,7 +594,8 @@ const translations = {
 		ar: 'خطأ غير معروف',
 		ru: 'Неизвестная ошибка',
 		hi: 'अज्ञात त्रुटि',
-	},
+	
+		zh: '未知错误',},
 	login_button: {
 		en: 'Login',
 		pt: 'Login',
@@ -560,7 +606,8 @@ const translations = {
 		ar: 'تسجيل الدخول',
 		ru: 'Войти',
 		hi: 'लॉग इन',
-	},
+	
+		zh: '登录',},
 	login_disclaimer: {
 		en: 'This application is not official and is not affiliated with EMEL. Your credentials are not shared with us or any third party.',
 		pt: 'Esta aplicação não é oficial e não está afiliada à EMEL. As suas credenciais não são partilhadas connosco ou com terceiros.',
@@ -571,7 +618,8 @@ const translations = {
 		ar: 'هذا التطبيق غير رسمي وغير تابع لـ EMEL. لا تتم مشاركة بيانات اعتمادك معنا أو مع أي طرف ثالث.',
 		ru: 'Это приложение неофициальное и не связано с EMEL. Ваши учетные данные не передаются нам или третьим лицам.',
 		hi: 'यह एप्लिकेशन आधिकारिक नहीं है और EMEL से संबद्ध नहीं है। आपके क्रेडेंशियल्स हमारे या किसी तीसरे पक्ष के साथ साझा नहीं किए जाते।',
-	},
+	
+		zh: '本应用非官方出品，与 EMEL 无关联。您的凭据不会与我们或任何第三方共享。',},
 	history_subtext: {
 		en: 'List of previous trips',
 		pt: 'Lista de viagens anteriores',
@@ -582,7 +630,8 @@ const translations = {
 		ar: 'قائمة الرحلات السابقة',
 		ru: 'Список предыдущих поездок',
 		hi: 'पिछली यात्राओं की सूची',
-	},
+	
+		zh: '历史行程列表',},
 	settings_subtext: {
 		en: 'Application settings',
 		pt: 'Definições da aplicação',
@@ -593,7 +642,8 @@ const translations = {
 		ar: 'إعدادات التطبيق',
 		ru: 'Настройки приложения',
 		hi: 'एप्लिकेशन सेटिंग्स',
-	},
+	
+		zh: '应用程序设置',},
 	feedback_subtext: {
 		en: 'Problems and suggestions',
 		pt: 'Problemas e sugestões',
@@ -604,7 +654,8 @@ const translations = {
 		ar: 'المشاكل والاقتراحات',
 		ru: 'Проблемы и предложения',
 		hi: 'समस्याएं और सुझाव',
-	},
+	
+		zh: '问题与建议',},
 	about_subtext: {
 		en: 'Information about the application',
 		pt: 'Informação acerca da aplicação',
@@ -615,7 +666,8 @@ const translations = {
 		ar: 'معلومات حول التطبيق',
 		ru: 'Информация о приложении',
 		hi: 'एप्लिकेशन के बारे में जानकारी',
-	},
+	
+		zh: '关于应用程序的信息',},
 	contribute_subtext: {
 		en: 'Support the project\'s development',
 		pt: 'Apoiar o desenvolvimento do projeto',
@@ -626,7 +678,8 @@ const translations = {
 		ar: 'دعم تطوير المشروع',
 		ru: 'Поддержать разработку проекта',
 		hi: 'प्रोजेक्ट के विकास का समर्थन करें',
-	},
+	
+		zh: '支持项目开发',},
 	star_subtext: {
 		en: 'Leave us a star on GitHub',
 		pt: 'Deixa-nos uma estrela no GitHub',
@@ -637,7 +690,8 @@ const translations = {
 		ar: 'اترك لنا نجمة على GitHub',
 		ru: 'Оставьте нам звезду на GitHub',
 		hi: 'GitHub पर हमें एक स्टार दें',
-	},
+	
+		zh: '在 GitHub 上给我们点个星',},
 	dock_label: {
 		en: 'DOCK',
 		pt: 'DOCA',
@@ -648,7 +702,8 @@ const translations = {
 		ar: 'محطة',
 		ru: 'ДОК',
 		hi: 'डॉक',
-	},
+	
+		zh: '停车位',},
 	theme_setting_label: {
 		en: 'Theme',
 		pt: 'Tema',
@@ -659,7 +714,8 @@ const translations = {
 		ar: 'المظهر',
 		ru: 'Тема',
 		hi: 'थीम',
-	},
+	
+		zh: '主题',},
 	theme_setting_description: {
 		en: 'Application color scheme',
 		pt: 'Esquema de cores da aplicação',
@@ -670,7 +726,8 @@ const translations = {
 		ar: 'نظام ألوان التطبيق',
 		ru: 'Цветовая схема приложения',
 		hi: 'एप्लिकेशन रंग योजना',
-	},
+	
+		zh: '应用程序配色方案',},
 	system_theme: {
 		en: 'System',
 		pt: 'Sistema',
@@ -681,7 +738,8 @@ const translations = {
 		ar: 'النظام',
 		ru: 'Системная',
 		hi: 'सिस्टम',
-	},
+	
+		zh: '系统',},
 	light_theme: {
 		en: 'Light',
 		pt: 'Claro',
@@ -692,7 +750,8 @@ const translations = {
 		ar: 'فاتح',
 		ru: 'Светлая',
 		hi: 'हल्का',
-	},
+	
+		zh: '浅色',},
 	dark_theme: {
 		en: 'Dark',
 		pt: 'Escuro',
@@ -703,7 +762,8 @@ const translations = {
 		ar: 'داكن',
 		ru: 'Темная',
 		hi: 'गहरा',
-	},
+	
+		zh: '深色',},
 	daylight_theme: {
 		en: 'Daylight',
 		pt: 'Luz do dia',
@@ -714,7 +774,8 @@ const translations = {
 		ar: 'ضوء النهار',
 		ru: 'Дневной свет',
 		hi: 'दिन का उजाला',
-	},
+	
+		zh: '日光',},
 	locale_setting_label: {
 		en: 'Language',
 		pt: 'Idioma',
@@ -725,7 +786,8 @@ const translations = {
 		ar: 'اللغة',
 		ru: 'Язык',
 		hi: 'भाषा',
-	},
+	
+		zh: '语言',},
 	locale_setting_description: {
 		en: 'Application language',
 		pt: 'Idioma da aplicação',
@@ -736,7 +798,8 @@ const translations = {
 		ar: 'لغة التطبيق',
 		ru: 'Язык приложения',
 		hi: 'एप्लिकेशन भाषा',
-	},
+	
+		zh: '应用程序语言',},
 	system_locale: {
 		en: 'System',
 		pt: 'Sistema',
@@ -747,7 +810,8 @@ const translations = {
 		ar: 'النظام',
 		ru: 'Системный',
 		hi: 'सिस्टम',
-	},
+	
+		zh: '系统',},
 	lock_distance_setting_label: {
 		en: 'Limit unlocking',
 		pt: 'Limitar desbloqueio',
@@ -758,7 +822,8 @@ const translations = {
 		ar: 'تحديد فتح القفل',
 		ru: 'Ограничить разблокировку',
 		hi: 'अनलॉक सीमित करें',
-	},
+	
+		zh: '限制解锁',},
 	lock_distance_setting_description: {
 		en: 'Restrict bicycle unlocking distance to {{distance}} meters',
 		pt: 'Restringir a distância de desbloqueio de bicicletas a {{distance}} metros',
@@ -780,7 +845,8 @@ const translations = {
 		ar: 'الموقع في الخلفية',
 		ru: 'Фоновое местоположение',
 		hi: 'पृष्ठभूमि स्थान',
-	},
+	
+		zh: '后台定位',},
 	background_location_setting_description: {
 		en: 'Continue updating the location while the device is locked or the app is in the background',
 		pt: 'Continuar a atualizar a localização enquanto o dispositivo está bloqueado ou a aplicação está em segundo plano',
@@ -791,7 +857,8 @@ const translations = {
 		ar: 'الاستمرار في تحديث الموقع أثناء قفل الجهاز أو التطبيق في الخلفية',
 		ru: 'Продолжать обновлять местоположение при заблокированном устройстве или в фоновом режиме',
 		hi: 'डिवाइस लॉक या ऐप बैकग्राउंड में होने पर भी स्थान अपडेट करते रहें',
-	},
+	
+		zh: '在设备锁定或应用在后台运行时继续更新位置',},
 	analytics_setting_label: {
 		en: 'Contribute to statistics',
 		pt: 'Contribuir para estatísticas',
@@ -802,7 +869,8 @@ const translations = {
 		ar: 'المساهمة في الإحصائيات',
 		ru: 'Участвовать в статистике',
 		hi: 'आंकड़ों में योगदान करें',
-	},
+	
+		zh: '贡献统计数据',},
 	analytics_setting_description: {
 		en: 'Contribute with the collection of anonymous events: app opening, trip starts and errors',
 		pt: 'Contribuir com a coleção de eventos anónimos: abertura da aplicação, começo de viagens e erros',
@@ -813,7 +881,8 @@ const translations = {
 		ar: 'المساهمة في جمع الأحداث المجهولة: فتح التطبيق، بدء الرحلات والأخطاء',
 		ru: 'Участвовать в сборе анонимных событий: открытие приложения, начало поездок и ошибки',
 		hi: 'गुमनाम घटनाओं के संग्रह में योगदान: ऐप खोलना, यात्रा शुरू और त्रुटियां',
-	},
+	
+		zh: '贡献匿名事件收集：应用打开、行程开始和错误',},
 	mock_unlock_setting_label: {
 		en: 'Simulate unlocking',
 		pt: 'Simular desbloqueio',
@@ -824,7 +893,8 @@ const translations = {
 		ar: 'محاكاة فتح القفل',
 		ru: 'Симулировать разблокировку',
 		hi: 'अनलॉक अनुकरण करें',
-	},
+	
+		zh: '模拟解锁',},
 	mock_unlock_setting_description: {
 		en: 'Simulate reservation and unlocking of bicycles in development mode',
 		pt: 'Simular a reserva e desbloqueio de bicicletas em modo de desenvolvimento',
@@ -835,7 +905,8 @@ const translations = {
 		ar: 'محاكاة الحجز وفتح القفل في وضع التطوير',
 		ru: 'Симулировать бронирование и разблокировку в режиме разработки',
 		hi: 'विकास मोड में आरक्षण और अनलॉक अनुकरण करें',
-	},
+	
+		zh: '在开发模式下模拟自行车预订和解锁',},
 	report_ratings_setting_label: {
 		en: 'Share trip ratings',
 		pt: 'Partilhar avaliações de viagens',
@@ -846,7 +917,8 @@ const translations = {
 		ar: 'مشاركة تقييمات الرحلات',
 		ru: 'Делиться оценками поездок',
 		hi: 'यात्रा रेटिंग साझा करें',
-	},
+	
+		zh: '分享行程评价',},
 	report_ratings_setting_description: {
 		en: 'Share your trip ratings with us so we can warn about bike conditions',
 		pt: 'Partilhar as suas avaliações de viagens connosco para que possamos avisar sobre o estado das bicicletas',
@@ -857,7 +929,8 @@ const translations = {
 		ar: 'شارك تقييماتك لنتمكن من التحذير بشأن حالة الدراجات',
 		ru: 'Делитесь оценками, чтобы мы могли предупреждать о состоянии велосипедов',
 		hi: 'अपनी रेटिंग साझा करें ताकि हम बाइक की स्थिति के बारे में चेतावनी दे सकें',
-	},
+	
+		zh: '与我们分享您的行程评价，以便我们提醒自行车状况',},
 	ui_settings_section: {
 		en: 'Interface',
 		pt: 'Interface',
@@ -868,7 +941,8 @@ const translations = {
 		ar: 'الواجهة',
 		ru: 'Интерфейс',
 		hi: 'इंटरफ़ेस',
-	},
+	
+		zh: '界面',},
 	location_settings_section: {
 		en: 'Location',
 		pt: 'Localização',
@@ -879,7 +953,8 @@ const translations = {
 		ar: 'الموقع',
 		ru: 'Местоположение',
 		hi: 'स्थान',
-	},
+	
+		zh: '位置',},
 	warnings_settings_section: {
 		en: 'Warnings',
 		pt: 'Avisos',
@@ -890,7 +965,8 @@ const translations = {
 		ar: 'التحذيرات',
 		ru: 'Предупреждения',
 		hi: 'चेतावनियां',
-	},
+	
+		zh: '警告',},
 	statistics_settings_section: {
 		en: 'Statistics',
 		pt: 'Estatísticas',
@@ -901,7 +977,8 @@ const translations = {
 		ar: 'الإحصائيات',
 		ru: 'Статистика',
 		hi: 'आंकड़े',
-	},
+	
+		zh: '统计',},
 	development_settings_section: {
 		en: 'Development',
 		pt: 'Desenvolvimento',
@@ -912,7 +989,8 @@ const translations = {
 		ar: 'التطوير',
 		ru: 'Разработка',
 		hi: 'विकास',
-	},
+	
+		zh: '开发',},
 	no_tokens_available_error: {
 		en: 'No tokens available',
 		pt: 'Sem tokens disponíveis',
@@ -923,7 +1001,8 @@ const translations = {
 		ar: 'لا توجد رموز متاحة',
 		ru: 'Нет доступных токенов',
 		hi: 'कोई टोकन उपलब्ध नहीं',
-	},
+	
+		zh: '无可用令牌',},
 	token_encryption_error: {
 		en: 'Error encrypting the token',
 		pt: 'Erro ao encriptar o token',
@@ -934,7 +1013,8 @@ const translations = {
 		ar: 'خطأ في تشفير الرمز',
 		ru: 'Ошибка шифрования токена',
 		hi: 'टोकन एन्क्रिप्शन में त्रुटि',
-	},
+	
+		zh: '令牌加密错误',},
 	token_fetch_error: {
 		en: 'Error obtaining a token',
 		pt: 'Erro ao obter um token',
@@ -945,7 +1025,8 @@ const translations = {
 		ar: 'خطأ في الحصول على رمز',
 		ru: 'Ошибка получения токена',
 		hi: 'टोकन प्राप्त करने में त्रुटि',
-	},
+	
+		zh: '获取令牌错误',},
 	auth_api_communication_error: {
 		en: 'Could not communicate with the authentication API. The service may be temporarily unavailable.',
 		pt: 'Não foi possível comunicar com a API de autenticação da Gira. O serviço pode estar temporariamente indisponível.',
@@ -956,7 +1037,8 @@ const translations = {
 		ar: 'تعذر الاتصال بواجهة برمجة المصادقة. قد تكون الخدمة غير متاحة مؤقتاً.',
 		ru: 'Не удалось связаться с API аутентификации. Сервис может быть временно недоступен.',
 		hi: 'प्रमाणीकरण API से संवाद नहीं हो सका। सेवा अस्थायी रूप से अनुपलब्ध हो सकती है।',
-	},
+	
+		zh: '无法与认证 API 通信。服务可能暂时不可用。',},
 	gira_api_communication_error: {
 		en: 'Could not communicate with the Gira service API. The service may be temporarily unavailable.',
 		pt: 'Não foi possível comunicar com a API do serviço Gira. O serviço pode estar temporariamente indisponível.',
@@ -967,7 +1049,8 @@ const translations = {
 		ar: 'تعذر الاتصال بواجهة برمجة خدمة Gira. قد تكون الخدمة غير متاحة مؤقتاً.',
 		ru: 'Не удалось связаться с API сервиса Gira. Сервис может быть временно недоступен.',
 		hi: 'Gira सेवा API से संवाद नहीं हो सका। सेवा अस्थायी रूप से अनुपलब्ध हो सकती है।',
-	},
+	
+		zh: '无法与 Gira 服务 API 通信。服务可能暂时不可用。',},
 	auth_api_communication_error_retry: {
 		en: 'Could not communicate with the authentication API. Retrying...',
 		pt: 'Não foi possível comunicar com a API de autenticação da Gira. A tentar novamente...',
@@ -978,7 +1061,8 @@ const translations = {
 		ar: 'تعذر الاتصال بواجهة برمجة المصادقة. جاري إعادة المحاولة...',
 		ru: 'Не удалось связаться с API аутентификации. Повторная попытка...',
 		hi: 'प्रमाणीकरण API से संवाद नहीं हो सका। पुनः प्रयास हो रहा है...',
-	},
+	
+		zh: '无法与认证 API 通信。正在重试...',},
 	gira_api_communication_error_retry: {
 		en: 'Could not communicate with the Gira service API. Retrying...',
 		pt: 'Não foi possível comunicar com a API do serviço Gira. A tentar novamente...',
@@ -989,7 +1073,8 @@ const translations = {
 		ar: 'تعذر الاتصال بواجهة برمجة خدمة Gira. جاري إعادة المحاولة...',
 		ru: 'Не удалось связаться с API сервиса Gira. Повторная попытка...',
 		hi: 'Gira सेवा API से संवाद नहीं हो सका। पुनः प्रयास हो रहा है...',
-	},
+	
+		zh: '无法与 Gira 服务 API 通信。正在重试...',},
 	no_active_subscription_error: {
 		en: 'You don\'t have an active subscription',
 		pt: 'Não tem uma subscrição ativa',
@@ -1000,7 +1085,8 @@ const translations = {
 		ar: 'ليس لديك اشتراك نشط',
 		ru: 'У вас нет активной подписки',
 		hi: 'आपके पास कोई सक्रिय सदस्यता नहीं है',
-	},
+	
+		zh: '您没有有效订阅',},
 	negative_balance_error: {
 		en: 'It\'s not possible to unlock bicycles if your balance is negative',
 		pt: 'Não é possível desbloquear bicicletas se o seu saldo for negativo',
@@ -1011,7 +1097,8 @@ const translations = {
 		ar: 'لا يمكن فتح قفل الدراجات إذا كان رصيدك سالباً',
 		ru: 'Невозможно разблокировать велосипед при отрицательном балансе',
 		hi: 'नकारात्मक बैलेंस होने पर बाइक अनलॉक नहीं की जा सकती',
-	},
+	
+		zh: '余额为负时无法解锁自行车',},
 	location_determination_error: {
 		en: 'It was not possible to determine your position',
 		pt: 'Não foi possível determinar a sua posição',
@@ -1022,7 +1109,8 @@ const translations = {
 		ar: 'لم يكن من الممكن تحديد موقعك',
 		ru: 'Не удалось определить ваше местоположение',
 		hi: 'आपकी स्थिति निर्धारित करना संभव नहीं था',
-	},
+	
+		zh: '无法确定您的位置',},
 	not_close_enough_error: {
 		en: 'You\'re not close enough to the station',
 		pt: 'Não está perto o suficiente da estação',
@@ -1033,7 +1121,8 @@ const translations = {
 		ar: 'أنت لست قريباً بما يكفي من المحطة',
 		ru: 'Вы находитесь слишком далеко от станции',
 		hi: 'आप स्टेशन के पर्याप्त करीब नहीं हैं',
-	},
+	
+		zh: '您距离站点不够近',},
 	bike_unlock_error: {
 		en: 'It was not possible to unlock the bicycle',
 		pt: 'Não foi possível desbloquear a bicicleta',
@@ -1044,7 +1133,8 @@ const translations = {
 		ar: 'لم يكن من الممكن فتح قفل الدراجة',
 		ru: 'Не удалось разблокировать велосипед',
 		hi: 'बाइक अनलॉक करना संभव नहीं था',
-	},
+	
+		zh: '无法解锁自行车',},
 	bike_unlock_no_serial_error: {
 		en: 'Bike identification number not found',
 		pt: 'Numero de identificação da bicicleta não encontrado',
@@ -1055,7 +1145,8 @@ const translations = {
 		ar: 'لم يتم العثور على رقم تعريف الدراجة',
 		ru: 'Идентификационный номер велосипеда не найден',
 		hi: 'बाइक पहचान संख्या नहीं मिली',
-	},
+	
+		zh: '未找到自行车识别号',},
 	service_hours_error: {
 		en: 'Service unavailable. Hours of operation between 06:00 and 02:00.',
 		pt: 'Serviço indisponível. Horário de utilização entre as 06:00 e as 02:00.',
@@ -1066,7 +1157,8 @@ const translations = {
 		ar: 'الخدمة غير متوفرة. ساعات العمل بين 06:00 و 02:00.',
 		ru: 'Сервис недоступен. Часы работы с 06:00 до 02:00.',
 		hi: 'सेवा अनुपलब्ध। संचालन समय 06:00 से 02:00 के बीच।',
-	},
+	
+		zh: '服务不可用。运营时间：06:00 至 02:00。',},
 	trip_interval_limit_error: {
 		en: 'You have to wait 5 minutes between trips',
 		pt: 'Tem que esperar 5 minutos entre viagens',
@@ -1077,7 +1169,8 @@ const translations = {
 		ar: 'يجب أن تنتظر 5 دقائق بين الرحلات',
 		ru: 'Вы должны подождать 5 минут между поездками',
 		hi: 'यात्राओं के बीच 5 मिनट प्रतीक्षा करनी होगी',
-	},
+	
+		zh: '行程之间需等待 5 分钟',},
 	already_active_trip_error: {
 		en: 'You already have an active trip',
 		pt: 'Já tem uma viagem ativa',
@@ -1088,7 +1181,8 @@ const translations = {
 		ar: 'لديك رحلة نشطة بالفعل',
 		ru: 'У вас уже есть активная поездка',
 		hi: 'आपकी पहले से एक सक्रिय यात्रा है',
-	},
+	
+		zh: '您已有进行中的行程',},
 	trip_not_found_error: {
 		en: 'Trip not found',
 		pt: 'Viagem não encontrada',
@@ -1099,7 +1193,8 @@ const translations = {
 		ar: 'الرحلة غير موجودة',
 		ru: 'Поездка не найдена',
 		hi: 'यात्रा नहीं मिली',
-	},
+	
+		zh: '未找到行程',},
 	bike_already_in_trip_error: {
 		en: 'This bike is already in a trip',
 		pt: 'Esta bicicleta já está numa viagem',
@@ -1110,7 +1205,8 @@ const translations = {
 		ar: 'هذه الدراجة في رحلة بالفعل',
 		ru: 'Этот велосипед уже в поездке',
 		hi: 'यह बाइक पहले से यात्रा में है',
-	},
+	
+		zh: '此自行车已在使用中',},
 	bike_already_reserved_error: {
 		en: 'This bike is already reserved',
 		pt: 'Esta bicicleta já está reservada',
@@ -1121,7 +1217,8 @@ const translations = {
 		ar: 'هذه الدراجة محجوزة بالفعل',
 		ru: 'Этот велосипед уже забронирован',
 		hi: 'यह बाइक पहले से आरक्षित है',
-	},
+	
+		zh: '此自行车已被预订',},
 	no_bike_found_error: {
 		en: 'No bike found',
 		pt: 'Não foi possível encontrar a bicicleta',
@@ -1132,7 +1229,8 @@ const translations = {
 		ar: 'لم يتم العثور على دراجة',
 		ru: 'Велосипед не найден',
 		hi: 'कोई बाइक नहीं मिली',
-	},
+	
+		zh: '未找到自行车',},
 	bike_in_repair_error: {
 		en: 'This bike is in repair',
 		pt: 'Esta bicicleta está em reparação',
@@ -1143,7 +1241,8 @@ const translations = {
 		ar: 'هذه الدراجة قيد الإصلاح',
 		ru: 'Этот велосипед на ремонте',
 		hi: 'यह बाइक मरम्मत में है',
-	},
+	
+		zh: '此自行车正在维修',},
 	network_offline_warning: {
 		en: 'You are currently offline',
 		pt: 'Não está ligado à Internet',
@@ -1154,7 +1253,8 @@ const translations = {
 		ar: 'أنت غير متصل بالإنترنت حالياً',
 		ru: 'Вы сейчас офлайн',
 		hi: 'आप वर्तमान में ऑफ़लाइन हैं',
-	},
+	
+		zh: '您当前处于离线状态',},
 	update_warning_setting_label: {
 		en: 'Update warning',
 		pt: 'Aviso de atualização',
@@ -1165,7 +1265,8 @@ const translations = {
 		ar: 'تحذير التحديث',
 		ru: 'Предупреждение об обновлении',
 		hi: 'अपडेट चेतावनी',
-	},
+	
+		zh: '更新提醒',},
 	update_warning_setting_description: {
 		en: 'Show a warning when a new version of the app is available',
 		pt: 'Mostrar um aviso quando uma nova versão da aplicação estiver disponível',
@@ -1176,7 +1277,8 @@ const translations = {
 		ar: 'عرض تحذير عند توفر إصدار جديد من التطبيق',
 		ru: 'Показывать предупреждение при наличии новой версии',
 		hi: 'नया संस्करण उपलब्ध होने पर चेतावनी दिखाएं',
-	},
+	
+		zh: '当有新版本可用时显示提醒',},
 	no_bikes_found: {
 		en: 'No bikes found',
 		pt: 'Nenhuma bicicleta encontrada',
@@ -1187,7 +1289,8 @@ const translations = {
 		ar: 'لم يتم العثور على دراجات',
 		ru: 'Велосипеды не найдены',
 		hi: 'कोई बाइक नहीं मिली',
-	},
+	
+		zh: '未找到自行车',},
 	search_other_bikes: {
 		en: 'Search for other bikes',
 		pt: 'Procurar outras bicicletas',
@@ -1198,7 +1301,8 @@ const translations = {
 		ar: 'ابحث عن دراجات أخرى',
 		ru: 'Искать другие велосипеды',
 		hi: 'अन्य बाइक खोजें',
-	},
+	
+		zh: '搜索其他自行车',},
 	ghost_bike_title: {
 		en: 'Missing bikes',
 		pt: 'Bicicletas em falta',
@@ -1209,7 +1313,8 @@ const translations = {
 		ar: 'دراجات مفقودة',
 		ru: 'Отсутствующие велосипеды',
 		hi: 'गायब बाइक',
-	},
+	
+		zh: '丢失的自行车',},
 	ghost_bike_description: {
 		en: 'You can try to retrieve bikes with a green light that do not appear in the system through their number.',
 		pt: 'Pode tentar retirar bicicletas com luz verde que não aparecem no sistema através do seu número.',
@@ -1220,7 +1325,8 @@ const translations = {
 		ar: 'يمكنك محاولة استرداد الدراجات ذات الضوء الأخضر التي لا تظهر في النظام من خلال رقمها.',
 		ru: 'Вы можете попробовать получить велосипеды с зеленым светом, которые не отображаются в системе, по их номеру.',
 		hi: 'आप हरी लाइट वाली बाइक जो सिस्टम में नहीं दिखती, उन्हें उनके नंबर से प्राप्त करने का प्रयास कर सकते हैं।',
-	},
+	
+		zh: '您可以尝试通过编号获取有绿灯但未显示在系统中的自行车。',},
 	ghost_dismiss_label: {
 		en: 'Attempt to unlock',
 		pt: 'Tentar retirar',
@@ -1231,7 +1337,8 @@ const translations = {
 		ar: 'محاولة فتح القفل',
 		ru: 'Попробовать разблокировать',
 		hi: 'अनलॉक करने का प्रयास',
-	},
+	
+		zh: '尝试解锁',},
 	bike_unlock_invalid_id_error: {
 		en: 'Invalid bike ID. It should be a 4-digit number.',
 		pt: 'ID de bicicleta inválido. Deve ser um número de 4 dígitos.',
@@ -1242,7 +1349,8 @@ const translations = {
 		ar: 'معرف الدراجة غير صالح. يجب أن يكون رقماً مكوناً من 4 أرقام.',
 		ru: 'Неверный ID велосипеда. Должен быть 4-значным числом.',
 		hi: 'अमान्य बाइक ID। यह 4 अंकों का नंबर होना चाहिए।',
-	},
+	
+		zh: '无效的自行车 ID。应为 4 位数字。',},
 	privacy_section: {
 		en: 'Privacy',
 		pt: 'Privacidade',
@@ -1253,7 +1361,8 @@ const translations = {
 		ar: 'الخصوصية',
 		ru: 'Конфиденциальность',
 		hi: 'गोपनीयता',
-	},
+	
+		zh: '隐私',},
 	privacy_title: {
 		en: 'Your Privacy Matters',
 		pt: 'A Sua Privacidade Importa',
@@ -1264,7 +1373,8 @@ const translations = {
 		ar: 'خصوصيتك مهمة',
 		ru: 'Ваша Конфиденциальность Важна',
 		hi: 'आपकी गोपनीयता मायने रखती है',
-	},
+	
+		zh: '您的隐私至关重要',},
 	privacy_message: {
 		en: 'We believe your cycling journey is yours alone. Unlike other apps, we don\'t collect analytics, track your rides, or share your data with third parties. Your privacy isn\'t a feature – it\'s a promise. Ride free. Ride private.',
 		pt: 'Acreditamos que a sua jornada de ciclismo é só sua. Ao contrário de outras apps, não recolhemos estatísticas, não rastreamos as suas viagens, nem partilhamos os seus dados com terceiros. A sua privacidade não é uma funcionalidade – é uma promessa. Pedale livre. Pedale em privado.',
@@ -1275,7 +1385,8 @@ const translations = {
 		ar: 'نؤمن بأن رحلتك على الدراجة ملكك وحدك. على عكس التطبيقات الأخرى، لا نجمع إحصائيات، ولا نتتبع رحلاتك، ولا نشارك بياناتك. خصوصيتك ليست ميزة بل وعد.',
 		ru: 'Мы верим, что ваше велопутешествие принадлежит только вам. В отличие от других приложений, мы не собираем статистику, не отслеживаем поездки и не делимся вашими данными. Ваша конфиденциальность — не функция, а обещание.',
 		hi: 'हम मानते हैं कि आपकी साइकिल यात्रा केवल आपकी है। अन्य ऐप्स के विपरीत, हम आंकड़े नहीं एकत्र करते, आपकी यात्राओं को ट्रैक नहीं करते, न ही आपका डेटा साझा करते हैं। आपकी गोपनीयता एक सुविधा नहीं, एक वादा है।',
-	},
+	
+		zh: '我们相信您的骑行旅程只属于您自己。与其他应用不同，我们不收集分析数据，不追踪您的行程，也不与第三方共享您的数据。您的隐私不是功能——而是承诺。自由骑行，隐私骑行。',},
 	disclaimer_title: {
 		en: 'Disclaimer',
 		pt: 'Aviso',
@@ -1286,7 +1397,8 @@ const translations = {
 		ar: 'إخلاء مسؤولية',
 		ru: 'Отказ от ответственности',
 		hi: 'अस्वीकरण',
-	},
+	
+		zh: '免责声明',},
 	modified_app_disclaimer: {
 		en: 'This is a modified version of the original Gira application. This app has no official affiliation with EMEL, Câmara Municipal de Lisboa, or the original Gira service. It was created independently to provide an enhanced user experience based on community feedback.',
 		pt: 'Esta é uma versão modificada da aplicação Gira original. Esta app não tem qualquer afiliação oficial com a EMEL, Câmara Municipal de Lisboa, ou o serviço Gira original. Foi criada de forma independente para proporcionar uma experiência de utilizador melhorada com base no feedback da comunidade.',
@@ -1297,7 +1409,8 @@ const translations = {
 		ar: 'هذه نسخة معدلة من تطبيق جيرا الأصلي. لا علاقة رسمية بـ EMEL أو بلدية لشبونة.',
 		ru: 'Это модифицированная версия оригинального приложения Gira. Не имеет официальной связи с EMEL или муниципалитетом Лиссабона.',
 		hi: 'यह मूल Gira ऐप का संशोधित संस्करण है। EMEL या लिस्बन नगरपालिका से कोई आधिकारिक संबंध नहीं।',
-	},
+	
+		zh: '这是原版 Gira 应用的修改版本。本应用与 EMEL、里斯本市政府或原版 Gira 服务无任何官方关联。它是根据社区反馈独立创建的，旨在提供增强的用户体验。',},
 	developer_bio: {
 		en: 'Tech enthusiast with a peculiar hobby: fixing things that companies left broken. When users in Lisbon started complaining about Gira\'s endless bugs and crashes, I saw a puzzle worth solving. Some people collect stamps, I collect bug fixes. This app is proof that one person with too much free time can sometimes do what a whole team couldn\'t.',
 		pt: 'Entusiasta de tecnologia com um hobby peculiar: arranjar coisas que as empresas deixaram estragadas. Quando os utilizadores em Lisboa começaram a queixar-se dos bugs e crashes infinitos da Gira, vi um puzzle que valia a pena resolver. Algumas pessoas colecionam selos, eu coleciono correções de bugs. Esta app é prova de que uma pessoa com tempo livre demais às vezes consegue fazer o que uma equipa inteira não conseguiu.',
@@ -1308,7 +1421,8 @@ const translations = {
 		ar: 'متحمس للتكنولوجيا بهواية غريبة: إصلاح ما تركه الآخرون معطلاً.',
 		ru: 'Энтузиаст технологий с необычным хобби: чинить то, что другие оставили сломанным.',
 		hi: 'एक तकनीक उत्साही जिसका अजीब शौक है: जो टूटा छोड़ दिया गया उसे ठीक करना।',
-	},
+	
+		zh: '一个有着奇特爱好的技术爱好者：修复公司留下的问题。当里斯本的用户开始抱怨 Gira 的无尽漏洞和崩溃时，我看到了一个值得解决的难题。有些人收集邮票，我收集漏洞修复。这个应用证明了一个有太多空闲时间的人有时能做到整个团队做不到的事。',},
 	support_development: {
 		en: 'Support Development ❤️',
 		pt: 'Apoiar o Desenvolvimento ❤️',
@@ -1319,71 +1433,163 @@ const translations = {
 		ar: '❤️ دعم التطوير',
 		ru: 'Поддержать Разработку ❤️',
 		hi: 'विकास का समर्थन करें ❤️',
-	},
+	
+		zh: '支持开发 ❤️',},
 	search_destination: {
 		en: 'Search destination...',
 		pt: 'Pesquisar destino...',
+		es: 'Buscar destino...',
+		fr: 'Rechercher destination...',
+		de: 'Ziel suchen...',
+		it: 'Cerca destinazione...',
 		ar: 'ابحث عن الوجهة...',
+		ru: 'Поиск места назначения...',
+		hi: 'गंतव्य खोजें...',
+		zh: '搜索目的地...',
 	},
 	nearest_stations: {
 		en: 'Nearest Stations',
 		pt: 'Estações Mais Próximas',
+		es: 'Estaciones Más Cercanas',
+		fr: 'Stations les Plus Proches',
+		de: 'Nächste Stationen',
+		it: 'Stazioni Più Vicine',
 		ar: 'أقرب المحطات',
+		ru: 'Ближайшие Станции',
+		hi: 'निकटतम स्टेशन',
+		zh: '最近的站点',
 	},
 	search_hint: {
 		en: 'Search for an address to find nearby stations',
 		pt: 'Pesquise um endereço para encontrar estações próximas',
+		es: 'Busca una dirección para encontrar estaciones cercanas',
+		fr: 'Recherchez une adresse pour trouver des stations à proximité',
+		de: 'Suchen Sie eine Adresse, um nahegelegene Stationen zu finden',
+		it: 'Cerca un indirizzo per trovare stazioni vicine',
 		ar: 'ابحث عن عنوان للعثور على المحطات القريبة',
+		ru: 'Найдите адрес, чтобы обнаружить ближайшие станции',
+		hi: 'पास के स्टेशन खोजने के लिए पता खोजें',
+		zh: '搜索地址以查找附近站点',
 	},
 	prediction_label: {
 		en: 'Predicted',
 		pt: 'Previsto',
+		es: 'Previsto',
+		fr: 'Prédit',
+		de: 'Vorhergesagt',
+		it: 'Previsto',
 		ar: 'متوقع',
+		ru: 'Прогноз',
+		hi: 'अनुमानित',
+		zh: '预测',
 	},
 	confidence_high: {
 		en: 'High confidence',
 		pt: 'Alta confiança',
+		es: 'Alta confianza',
+		fr: 'Haute confiance',
+		de: 'Hohe Zuverlässigkeit',
+		it: 'Alta affidabilità',
 		ar: 'ثقة عالية',
+		ru: 'Высокая уверенность',
+		hi: 'उच्च विश्वास',
+		zh: '高置信度',
 	},
 	confidence_medium: {
 		en: 'Medium confidence',
 		pt: 'Média confiança',
+		es: 'Confianza media',
+		fr: 'Confiance moyenne',
+		de: 'Mittlere Zuverlässigkeit',
+		it: 'Affidabilità media',
 		ar: 'ثقة متوسطة',
+		ru: 'Средняя уверенность',
+		hi: 'मध्यम विश्वास',
+		zh: '中等置信度',
 	},
 	confidence_low: {
 		en: 'Low confidence',
 		pt: 'Baixa confiança',
+		es: 'Baja confianza',
+		fr: 'Faible confiance',
+		de: 'Geringe Zuverlässigkeit',
+		it: 'Bassa affidabilità',
 		ar: 'ثقة منخفضة',
+		ru: 'Низкая уверенность',
+		hi: 'कम विश्वास',
+		zh: '低置信度',
 	},
 	offline_mode: {
 		en: 'Offline',
 		pt: 'Offline',
+		es: 'Sin conexión',
+		fr: 'Hors ligne',
+		de: 'Offline',
+		it: 'Offline',
 		ar: 'غير متصل',
+		ru: 'Офлайн',
+		hi: 'ऑफ़लाइन',
+		zh: '离线',
 	},
 	last_updated: {
 		en: 'Updated {{time}}',
 		pt: 'Atualizado {{time}}',
+		es: 'Actualizado {{time}}',
+		fr: 'Mis à jour {{time}}',
+		de: 'Aktualisiert {{time}}',
+		it: 'Aggiornato {{time}}',
 		ar: 'تم التحديث {{time}}',
+		ru: 'Обновлено {{time}}',
+		hi: 'अपडेट किया गया {{time}}',
+		zh: '更新于 {{time}}',
 	},
 	about_quote: {
 		en: '"Sometimes the best solutions come from those who simply refuse to accept that something is broken."',
 		pt: '"Às vezes, as melhores soluções vêm daqueles que simplesmente se recusam a aceitar que algo está estragado."',
+		es: '"A veces las mejores soluciones vienen de quienes simplemente se niegan a aceptar que algo está roto."',
+		fr: '"Parfois les meilleures solutions viennent de ceux qui refusent simplement d\'accepter que quelque chose est cassé."',
+		de: '"Manchmal kommen die besten Lösungen von denen, die sich einfach weigern zu akzeptieren, dass etwas kaputt ist."',
+		it: '"A volte le migliori soluzioni vengono da chi semplicemente si rifiuta di accettare che qualcosa sia rotto."',
 		ar: '"أحيانًا تأتي أفضل الحلول من أولئك الذين يرفضون ببساطة قبول أن شيئًا ما معطل."',
+		ru: '"Иногда лучшие решения приходят от тех, кто просто отказывается признавать, что что-то сломано."',
+		hi: '"कभी-कभी सबसे अच्छे समाधान उनसे आते हैं जो बस यह मानने से इनकार करते हैं कि कुछ टूटा हुआ है।"',
+		zh: '"有时最好的解决方案来自那些拒绝接受事物已损坏的人。"',
 	},
 	author_name: {
 		en: 'Seif Lesbat',
 		pt: 'Seif Lesbat',
+		es: 'Seif Lesbat',
+		fr: 'Seif Lesbat',
+		de: 'Seif Lesbat',
+		it: 'Seif Lesbat',
 		ar: 'سيف لسبط',
+		ru: 'Сейф Лесбат',
+		hi: 'सैफ लेसबात',
+		zh: '塞夫·莱斯巴特',
 	},
 	quran_verse: {
 		en: 'He it is, Who has made the earth subservient to you, so walk in the path thereof and eat of His provision, and to Him will be the Resurrection.',
 		pt: 'Ele é Quem fez a terra submissa a vós, então caminhai pelos seus caminhos e comei do Seu sustento, e a Ele será a Ressurreição.',
+		es: 'Él es Quien ha hecho la tierra sumisa para vosotros, así que caminad por sus senderos y comed de Su provisión, y a Él será la Resurrección.',
+		fr: 'C\'est Lui qui a rendu la terre soumise à vous, alors marchez dans ses chemins et mangez de Sa provision, et vers Lui sera la Résurrection.',
+		de: 'Er ist es, Der euch die Erde dienstbar gemacht hat, so wandelt auf ihren Wegen und esst von Seiner Versorgung, und zu Ihm wird die Auferstehung sein.',
+		it: 'È Lui che ha reso la terra sottomessa a voi, quindi camminate nei suoi sentieri e mangiate della Sua provvidenza, e a Lui sarà la Risurrezione.',
 		ar: 'هُوَ الَّذِي جَعَلَ لَكُمُ الْأَرْضَ ذَلُولًا فَامْشُوا فِي مَنَاكِبِهَا وَكُلُوا مِن رِّزْقِهِ ۖ وَإِلَيْهِ النُّشُورُ',
+		ru: 'Он — Тот, Кто сделал для вас землю покорной, так ходите же по её путям и вкушайте из Его удела, и к Нему — воскрешение.',
+		hi: 'वह वो है जिसने पृथ्वी को तुम्हारे लिए वश में किया, तो उसके मार्गों पर चलो और उसकी आजीविका खाओ, और उसी के पास पुनरुत्थान होगा।',
+		zh: '他使大地为你们驯服，你们应当在大地的各方行走，应当吃他的给养。复活只归于他。',
 	},
 	quran_reference: {
 		en: 'Al-Mulk (67:15)',
 		pt: 'Al-Mulk (67:15)',
+		es: 'Al-Mulk (67:15)',
+		fr: 'Al-Mulk (67:15)',
+		de: 'Al-Mulk (67:15)',
+		it: 'Al-Mulk (67:15)',
 		ar: '[ الملك: 15 ]',
+		ru: 'Аль-Мульк (67:15)',
+		hi: 'अल-मुल्क (67:15)',
+		zh: '国权章 (67:15)',
 	},
 } as const;
 
